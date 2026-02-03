@@ -1,0 +1,66 @@
+{
+  "seasons": [
+    {
+      "year": 2024,
+      "description": "A legendary season of competition and glory",
+      "leaderboard": [
+        {
+          "manager": "The Victorious One",
+          "teamName": "Bears Necessities",
+          "points": 1847.50
+        },
+        {
+          "manager": "Close Contender",
+          "teamName": "Monsters Inc",
+          "points": 1823.75
+        },
+        {
+          "manager": "Third Threat",
+          "teamName": "Victory Lap",
+          "points": 1802.30
+        },
+        {
+          "manager": "Fourth Place",
+          "teamName": "Almost There",
+          "points": 1791.20
+        },
+        {
+          "manager": "Fifth Finisher",
+          "teamName": "Mid Pack",
+          "points": 1778.90
+        }
+      ]
+    },
+    {
+      "year": 2025,
+      "description": "Current season - the championship is still being decided",
+      "leaderboard": [
+        {
+          "manager": "Current Leader",
+          "teamName": "Championship Bound",
+          "points": 1652.80
+        },
+        {
+          "manager": "Strong Second",
+          "teamName": "Chase Mode",
+          "points": 1641.50
+        },
+        {
+          "manager": "Climbing Fast",
+          "teamName": "The Comeback",
+          "points": 1628.70
+        },
+        {
+          "manager": "Mid Season",
+          "teamName": "Still Hoping",
+          "points": 1605.40
+        },
+        {
+          "manager": "Fighting Back",
+          "teamName": "Never Say Die",
+          "points": 1589.20
+        }
+      ]
+    }
+  ]
+}

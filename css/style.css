@@ -1,0 +1,482 @@
+/* === RESET & BASE === */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* Chicago Bears Colors */
+    --primary: #0B162B;      /* Navy Blue */
+    --secondary: #C83803;    /* Orange */
+    --accent: #FFFFFF;       /* White */
+    --light-bg: #F5F5F5;
+    --text-dark: #1a1a1a;
+    --text-light: #666;
+    --gold: #FFD700;
+    
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Poppins', sans-serif;
+    
+    --shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--primary);
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+/* === STARS BACKGROUND === */
+.stars-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 60px 70px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 50px 50px, #ddd, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 130px 80px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 90px 10px, #fff, rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    animation: twinkle 5s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.8; }
+}
+
+/* === HEADER === */
+header {
+    background: linear-gradient(135deg, var(--primary) 0%, #1a2a4a 100%);
+    border-bottom: 3px solid var(--secondary);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.tagline {
+    color: var(--secondary);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* === MAIN CONTENT === */
+main {
+    position: relative;
+    z-index: 1;
+}
+
+/* === HERO SECTION === */
+.hero {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a2a4a 100%);
+    color: var(--accent);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, var(--secondary) 0%, transparent 70%);
+    opacity: 0.1;
+    border-radius: 50%;
+}
+
+.hero-content {
+    flex: 1;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--secondary);
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent);
+}
+
+.hero-desc {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.8);
+}
+
+.bears-logo {
+    font-size: 8rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* === YEAR SELECTOR === */
+.year-selector {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.year-selector h2 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--accent);
+    margin-bottom: 2rem;
+}
+
+.year-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.year-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 2px solid var(--secondary);
+    background: transparent;
+    color: var(--secondary);
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-family: var(--font-body);
+}
+
+.year-btn:hover {
+    background: var(--secondary);
+    color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.year-btn.active {
+    background: var(--secondary);
+    color: var(--primary);
+    box-shadow: 0 0 20px rgba(200, 56, 3, 0.5);
+}
+
+/* === LEADERBOARD SECTION === */
+.leaderboard-section {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 2rem;
+}
+
+.leaderboard-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.leaderboard-header h2 {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.season-desc {
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+.leaderboard-container {
+    background: var(--accent);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.leaderboard-table thead {
+    background: linear-gradient(135deg, var(--primary) 0%, #1a2a4a 100%);
+    color: var(--accent);
+}
+
+.leaderboard-table th {
+    padding: 1.5rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+.leaderboard-table tbody tr {
+    border-bottom: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.leaderboard-table tbody tr:hover {
+    background: #f9f9f9;
+}
+
+.leaderboard-table tbody tr.champion {
+    background: linear-gradient(90deg, rgba(200, 56, 3, 0.1), transparent);
+    border-left: 4px solid var(--secondary);
+}
+
+.leaderboard-table tbody tr.runner-up {
+    background: linear-gradient(90deg, rgba(200, 56, 3, 0.05), transparent);
+}
+
+.leaderboard-table td {
+    padding: 1.25rem 1.5rem;
+}
+
+.leaderboard-table .rank {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.leaderboard-table .name {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.leaderboard-table .points {
+    font-weight: 600;
+    color: var(--secondary);
+}
+
+.leaderboard-table .trophy {
+    color: var(--secondary);
+    font-weight: 600;
+}
+
+/* === STATS SECTION === */
+.stats-section {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 2rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.stat-card {
+    background: var(--accent);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--secondary);
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+}
+
+.stat-card h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--secondary);
+}
+
+/* === HALL OF FAME === */
+.hall-of-fame {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 2rem;
+}
+
+.hall-of-fame h2 {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    color: var(--accent);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.champions-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.champion-card {
+    background: linear-gradient(135deg, var(--secondary), #b32a02);
+    color: var(--accent);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255,255,255,0.2);
+}
+
+.champion-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(200, 56, 3, 0.4);
+}
+
+.champion-trophy {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.champion-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.win-count {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.years {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* === FOOTER === */
+footer {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: var(--primary);
+    border-top: 3px solid var(--secondary);
+    color: var(--accent);
+    margin-top: 4rem;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .bears-logo {
+        font-size: 4rem;
+    }
+
+    .leaderboard-table {
+        font-size: 0.85rem;
+    }
+
+    .leaderboard-table th,
+    .leaderboard-table td {
+        padding: 0.75rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .champions-list {
+        grid-template-columns: 1fr;
+    }
+
+    .year-buttons {
+        gap: 0.5rem;
+    }
+
+    .year-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .leaderboard-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .champion-trophy {
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MurphDuel - Fantasy Football Leaderboards</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="stars-bg"></div>
+    
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <div class="logo">🏈 MurphDuel</div>
+                <p class="tagline">Fantasy Football Champions</p>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>MurphDuel</h1>
+                <p class="hero-subtitle">Fantasy Football Leaderboards & Champion History</p>
+                <p class="hero-desc">Track the greatest fantasy football dynasty</p>
+            </div>
+            <div class="bears-logo">🧡</div>
+        </section>
+
+        <!-- Year Selector -->
+        <section class="year-selector">
+            <h2>Select Season</h2>
+            <div class="year-buttons" id="yearButtons">
+                <!-- Populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Leaderboard Section -->
+        <section class="leaderboard-section">
+            <div class="leaderboard-header">
+                <h2 id="seasonTitle">2025 Final Standings</h2>
+                <p id="seasonDesc" class="season-desc"></p>
+            </div>
+
+            <div class="leaderboard-container">
+                <table class="leaderboard-table" id="leaderboardTable">
+                    <thead>
+                        <tr>
+                            <th class="rank">Rank</th>
+                            <th class="name">Manager</th>
+                            <th class="team">Team Name</th>
+                            <th class="points">Final Points</th>
+                            <th class="trophy">Prize</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboardBody">
+                        <!-- Populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Seasons</h3>
+                    <p class="stat-number" id="totalSeasons">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Managers</h3>
+                    <p class="stat-number" id="totalManagers">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Champions</h3>
+                    <p class="stat-number" id="totalChampions">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Points Scored</h3>
+                    <p class="stat-number" id="totalPoints">0</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hall of Fame -->
+        <section class="hall-of-fame">
+            <h2>Hall of Fame</h2>
+            <div class="champions-list" id="championsList">
+                <!-- Populated by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 MurphDuel Fantasy Football. Go Bears! 🧡</p>
+    </footer>
+
+    <script>
+        // Load leaderboard data
+        fetch('leaderboard.json')
+            .then(response => response.json())
+            .then(data => {
+                renderYearButtons(data.seasons);
+                renderLeaderboard(data.seasons[data.seasons.length - 1]);
+                calculateStats(data.seasons);
+                renderHallOfFame(data.seasons);
+            })
+            .catch(error => console.error('Error loading leaderboard:', error));
+
+        function renderYearButtons(seasons) {
+            const container = document.getElementById('yearButtons');
+            seasons.forEach((season, index) => {
+                const button = document.createElement('button');
+                button.className = 'year-btn' + (index === seasons.length - 1 ? ' active' : '');
+                button.textContent = season.year;
+                button.onclick = () => {
+                    document.querySelectorAll('.year-btn').forEach(b => b.classList.remove('active'));
+                    button.classList.add('active');
+                    renderLeaderboard(season);
+                };
+                container.appendChild(button);
+            });
+        }
+
+        function renderLeaderboard(season) {
+            document.getElementById('seasonTitle').textContent = `${season.year} Final Standings`;
+            document.getElementById('seasonDesc').textContent = season.description || '';
+            
+            const tbody = document.getElementById('leaderboardBody');
+            tbody.innerHTML = '';
+
+            season.leaderboard.forEach((entry, index) => {
+                const row = document.createElement('tr');
+                row.className = index === 0 ? 'champion' : index === 1 ? 'runner-up' : '';
+                
+                const trophy = getTrophy(index);
+                
+                row.innerHTML = `
+                    <td class="rank">${getMedalEmoji(index)} ${index + 1}</td>
+                    <td class="name">${entry.manager}</td>
+                    <td class="team">${entry.teamName}</td>
+                    <td class="points">${entry.points.toFixed(2)}</td>
+                    <td class="trophy">${trophy}</td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        function getMedalEmoji(rank) {
+            if (rank === 0) return '🥇';
+            if (rank === 1) return '🥈';
+            if (rank === 2) return '🥉';
+            return '';
+        }
+
+        function getTrophy(rank) {
+            if (rank === 0) return '🏆 Champion';
+            if (rank === 1) return '2nd Place';
+            if (rank === 2) return '3rd Place';
+            return '';
+        }
+
+        function calculateStats(seasons) {
+            const uniqueManagers = new Set();
+            let totalPoints = 0;
+            let totalChampions = 0;
+
+            seasons.forEach(season => {
+                season.leaderboard.forEach((entry, index) => {
+                    uniqueManagers.add(entry.manager);
+                    totalPoints += entry.points;
+                    if (index === 0) totalChampions++;
+                });
+            });
+
+            document.getElementById('totalSeasons').textContent = seasons.length;
+            document.getElementById('totalManagers').textContent = uniqueManagers.size;
+            document.getElementById('totalChampions').textContent = totalChampions;
+            document.getElementById('totalPoints').textContent = totalPoints.toFixed(0);
+        }
+
+        function renderHallOfFame(seasons) {
+            const champions = {};
+
+            seasons.forEach(season => {
+                const champion = season.leaderboard[0];
+                if (!champions[champion.manager]) {
+                    champions[champion.manager] = [];
+                }
+                champions[champion.manager].push({
+                    year: season.year,
+                    points: champion.points,
+                    teamName: champion.teamName
+                });
+            });
+
+            const container = document.getElementById('championsList');
+            container.innerHTML = '';
+
+            Object.entries(champions)
+                .sort((a, b) => b[1].length - a[1].length)
+                .forEach(([manager, wins]) => {
+                    const card = document.createElement('div');
+                    card.className = 'champion-card';
+                    
+                    const yearsText = wins.map(w => w.year).join(', ');
+                    const winCount = wins.length > 1 ? `${wins.length}-Time Champion` : 'Champion';
+                    
+                    card.innerHTML = `
+                        <div class="champion-trophy">👑</div>
+                        <h3>${manager}</h3>
+                        <p class="win-count">${winCount}</p>
+                        <p class="years">${yearsText}</p>
+                    `;
+                    container.appendChild(card);
+                });
+        }
+    </script>
+</body>
+</html>
