@@ -229,16 +229,15 @@ main {
     margin-bottom: 3rem;
 }
 
+.leaderboard-section .leaderboard-header h1,
+.leaderboard-section .leaderboard-header h2,
 .leaderboard-header h1,
-.leaderboard-header h2 {
+.leaderboard-header h2,
+#seasonTitle {
     font-family: var(--font-display);
     font-size: 2.5rem;
     color: #FFFFFF !important;
     margin-bottom: 0.5rem;
-}
-
-#seasonTitle {
-    color: #FFFFFF !important;
 }
 
 .header-controls {
