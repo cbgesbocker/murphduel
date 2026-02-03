@@ -29,7 +29,7 @@ html {
 body {
     font-family: var(--font-body);
     background: var(--primary);
-    color: var(--text-dark);
+    color: var(--accent);
     overflow-x: hidden;
 }
 
@@ -180,7 +180,8 @@ main {
     margin-bottom: 2rem;
 }
 
-.year-buttons {
+.year-buttons,
+.year-buttons-inline {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -215,8 +216,12 @@ main {
 /* === LEADERBOARD SECTION === */
 .leaderboard-section {
     max-width: 1200px;
-    margin: 4rem auto;
+    margin: 2rem auto;
     padding: 2rem;
+}
+
+.hero-leaderboard {
+    margin-top: 1rem;
 }
 
 .leaderboard-header {
@@ -224,6 +229,7 @@ main {
     margin-bottom: 3rem;
 }
 
+.leaderboard-header h1,
 .leaderboard-header h2 {
     font-family: var(--font-display);
     font-size: 2.5rem;
@@ -231,8 +237,12 @@ main {
     margin-bottom: 0.5rem;
 }
 
+.header-controls {
+    margin-top: 1.5rem;
+}
+
 .season-desc {
-    color: var(--text-light);
+    color: rgba(255,255,255,0.7);
     font-size: 1.1rem;
 }
 
@@ -261,40 +271,42 @@ main {
 }
 
 .leaderboard-table tbody tr {
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
     transition: all 0.3s ease;
 }
 
 .leaderboard-table tbody tr:hover {
-    background: #f9f9f9;
+    background: rgba(255,255,255,0.05);
 }
 
 .leaderboard-table tbody tr.champion {
-    background: linear-gradient(90deg, rgba(200, 56, 3, 0.1), transparent);
+    background: linear-gradient(90deg, rgba(200, 56, 3, 0.3), transparent);
     border-left: 4px solid var(--secondary);
 }
 
 .leaderboard-table tbody tr.runner-up {
-    background: linear-gradient(90deg, rgba(200, 56, 3, 0.05), transparent);
+    background: linear-gradient(90deg, rgba(200, 56, 3, 0.15), transparent);
 }
 
 .leaderboard-table td {
     padding: 1.25rem 1.5rem;
+    color: var(--accent);
 }
 
 .leaderboard-table .rank {
     font-weight: 700;
     font-size: 1.2rem;
+    color: var(--accent);
 }
 
 .leaderboard-table .name {
     font-weight: 600;
-    color: var(--primary);
+    color: var(--accent);
 }
 
 .leaderboard-table .points {
     font-weight: 600;
-    color: var(--secondary);
+    color: #FFD700;
 }
 
 .leaderboard-table .trophy {
@@ -329,8 +341,13 @@ main {
     transform: translateY(-4px);
 }
 
+.stat-card {
+    background: linear-gradient(135deg, rgba(200, 56, 3, 0.2), rgba(11, 22, 43, 0.8));
+    border: 1px solid rgba(200, 56, 3, 0.3);
+}
+
 .stat-card h3 {
-    color: var(--primary);
+    color: var(--accent);
     margin-bottom: 0.5rem;
     font-size: 0.95rem;
     font-weight: 600;
@@ -355,6 +372,7 @@ main {
     color: var(--accent);
     text-align: center;
     margin-bottom: 3rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .champions-list {
@@ -404,6 +422,13 @@ main {
 .years {
     font-size: 0.9rem;
     opacity: 0.9;
+}
+
+/* === STATUS BAR === */
+.status-bar {
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 500;
 }
 
 /* === FOOTER === */
