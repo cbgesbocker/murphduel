@@ -26,18 +26,18 @@ async function loadData() {
       if (!response.ok) throw new Error(`Spreadsheet returned ${response.status}`);
       const data = parseCsv(await response.text());
       render(data);
-      elements.status.textContent = "Live spreadsheet data";
+      elements.status.textContent = "Up to date from the spreadsheet";
       return;
     }
 
     const response = await fetch("leaderboard.json", { cache: "no-store" });
     if (!response.ok) throw new Error(`Leaderboard returned ${response.status}`);
     render(await response.json());
-    elements.status.textContent = "Published league data";
+    elements.status.textContent = "Latest saved standings";
   } catch (error) {
     console.error("Unable to load standings", error);
-    elements.status.textContent = "Standings unavailable";
-    elements.title.textContent = "We could not load the standings";
+    elements.status.textContent = "Couldn’t load the standings";
+    elements.title.textContent = "The standings didn’t load";
   }
 }
 

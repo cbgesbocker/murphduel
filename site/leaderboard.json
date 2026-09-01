@@ -2,7 +2,7 @@
   "seasons": [
     {
       "year": 2024,
-      "description": "A legendary season of competition and glory",
+      "description": "Final standings from the 2024 season.",
       "leaderboard": [
         {
           "manager": "The Victorious One",
@@ -33,7 +33,7 @@
     },
     {
       "year": 2025,
-      "description": "Current season - the championship is still being decided",
+      "description": "The latest standings on the sheet.",
       "leaderboard": [
         {
           "manager": "Current Leader",
