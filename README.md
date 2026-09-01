@@ -1,196 +1,100 @@
-# MurphDuel - Fantasy Football Leaderboards
+# MurphDuel
 
-A beautiful, responsive website for tracking FanDuel fantasy football leaderboards and champion history with Chicago Bears theme.
+View-only fantasy football standings at [www.murphduel.com](https://www.murphduel.com). The site is static HTML, CSS, and JavaScript hosted in a private S3 bucket and served through CloudFront.
 
-🏈 **Live Site:** https://murphduel.com  
-🐻 **Theme:** Chicago Bears (Navy Blue & Orange)
+## Architecture
 
-## Features
+```text
+GitHub main push
+      │
+      ▼
+CodePipeline ──► CodeBuild ──► private S3 site bucket
+                                      │
+                                      ▼
+Route 53 ──► CloudFront + ACM ──► Origin Access Control
 
-✅ **Yearly Leaderboards** - Display final standings for each season  
-✅ **Easy Score Upload** - Simple JSON file structure for adding new seasons  
-✅ **Hall of Fame** - Track multiple-time champions  
-✅ **Stats Dashboard** - Season count, total managers, champions, points  
-✅ **Responsive Design** - Works great on mobile, tablet, and desktop  
-✅ **Bears Themed** - Navy blue and orange color scheme  
-✅ **Zero Dependencies** - Pure HTML/CSS/JavaScript  
-
-## File Structure
-
-```
-murphduel/
-├── index.html          # Main page
-├── leaderboard.json    # League data (edit this to add seasons)
-├── css/
-│   └── style.css       # Styling (Bears theme)
-├── CNAME               # Custom domain config
-├── .gitignore
-└── README.md
+murphduel-iam stack ──exports──► CodePipeline and CodeBuild role ARNs
 ```
 
-## How to Add New Seasons
+AWS account: `314341330830`
 
-Simply edit `leaderboard.json` and add a new season object to the `seasons` array:
+Deployment region: `us-east-1` (required for the CloudFront ACM certificate)
+
+Source: `cbgesbocker/murphduel`, branch `main`
+
+## Repository layout
+
+```text
+site/                       Static website deployed to S3
+  config.json               Optional published spreadsheet CSV URL
+  leaderboard.json          Checked-in fallback data
+infrastructure/
+  template.yml              S3, CloudFront, ACM, Route 53, CodeBuild, CodePipeline
+  buildspec.yml             Static-site publish and CloudFront invalidation
+scripts/
+  serve.mjs                 Dependency-free Node development server
+  validate.mjs              Source and data checks
+  deploy-infrastructure.sh  Application stack deployment
+```
+
+IAM is intentionally maintained in a separate `cbgesbocker/murphduel-iam` repository. Its singleton CloudFormation stack exports the two service-role ARNs consumed by this stack with `Fn::ImportValue`.
+
+## Local development
+
+Node.js 20 or newer is recommended. There are no third-party packages to install.
+
+```bash
+npm run dev
+```
+
+Open `http://127.0.0.1:8000`. To validate the JavaScript and league data:
+
+```bash
+npm test
+```
+
+## Spreadsheet data
+
+The site supports a published CSV endpoint without granting visitors edit access. Set `googleSheetCsvUrl` in `site/config.json`:
 
 ```json
 {
-  "year": 2026,
-  "description": "The epic battle continues...",
-  "leaderboard": [
-    {
-      "manager": "Manager Name",
-      "teamName": "Team Name",
-      "points": 1850.50
-    },
-    {
-      "manager": "Second Place",
-      "teamName": "Second Team",
-      "points": 1820.75
-    }
-  ]
+  "googleSheetCsvUrl": "https://docs.google.com/spreadsheets/d/e/PUBLISHED_ID/pub?output=csv"
 }
 ```
 
-### Fields:
-- **year** - Season year (integer)
-- **description** - Optional season description
-- **leaderboard** - Array of managers with:
-  - **manager** - Manager's name
-  - **teamName** - Fantasy team name
-  - **points** - Final points scored
+The first row must contain these headers:
 
-The website automatically:
-- Generates year selector buttons
-- Displays medal emojis (🥇🥈🥉)
-- Calculates statistics
-- Updates Hall of Fame
-
-## Local Development
-
-```bash
-# Python
-python -m http.server 8000
-
-# Node
-npx serve
+```csv
+year,manager,teamName,points
+2026,Conner,Fourth and Long,1847.50
 ```
 
-Visit `http://localhost:3000` (or the port shown)
+Rows are grouped by year and sorted by points in the browser. If the URL is blank, the site loads `site/leaderboard.json` instead. A spreadsheet must be published for anonymous read access; do not put credentials or a private sheet URL in the site configuration.
 
-## Customization
+## First deployment
 
-### Colors
-Edit CSS variables in `css/style.css`:
-```css
---primary: #0B162B;      /* Navy Blue */
---secondary: #C83803;    /* Orange */
---accent: #FFFFFF;       /* White */
---gold: #FFD700;         /* Gold accents */
-```
+1. Deploy the singleton `murphduel-iam` repository first:
 
-### Fonts
-Currently using Google Fonts (Playfair Display + Poppins). Change in `index.html` `<head>`.
+   ```bash
+   ./deploy.sh
+   ```
 
-### Branding
-- Team name: "MurphDuel" (edit in index.html)
-- Logo emoji: 🏈 (edit in navbar)
-- Hall of Fame emoji: 👑 (edit in script)
+2. From this repository, deploy the application stack:
 
-## Deployment to GitHub Pages
+   ```bash
+   ./scripts/deploy-infrastructure.sh
+   ```
 
-### 1. Create Repository
-```bash
-git init
-git add .
-git commit -m "Initial commit: MurphDuel fantasy football website"
-```
+3. The deployment script reuses the account's existing `sdm-react-source-code` GitHub connection, which is already `AVAILABLE`. Override `CONNECTION_ARN` if you want to use a different connection. If no connection ARN is passed to the template, CloudFormation creates `murphduel-github` in `PENDING` state and it must be authorized once in **Developer Tools → Settings → Connections**.
 
-### 2. Push to GitHub
-```bash
-git remote add origin https://github.com/YOUR_USERNAME/murphduel.git
-git branch -M main
-git push -u origin main
-```
+4. Release or retry the `murphduel-main` pipeline. Every subsequent push to `main` publishes `site/` to S3 and invalidates the CloudFront cache.
 
-### 3. Enable GitHub Pages
-- Go to repo Settings → Pages
-- Select "Deploy from branch"
-- Choose "main" branch
-- Save
+The application template defaults to the existing Route 53 hosted zone `Z018598227JM4USXA36E6` and serves both `murphduel.com` and `www.murphduel.com` over HTTPS.
 
-### 4. Configure Custom Domain
-- Go to Settings → Pages
-- Under "Custom domain" enter: `murphduel.com`
-- Update your domain's DNS records to point to GitHub Pages:
+## Stack ownership
 
-```
-A Record @:
-  185.199.108.153
-  185.199.109.153
-  185.199.110.153
-  185.199.111.153
+- `murphduel-iam`: stable service roles and policies only. Change infrequently.
+- `murphduel`: website hosting, certificate, DNS, GitHub connection, and delivery pipeline.
 
-Or CNAME (if using subdomain):
-  CNAME www → YOUR_USERNAME.github.io
-```
-
-## Data Management Best Practices
-
-### Before Adding Scores
-1. Verify all final points with your league
-2. Double-check manager names for consistency
-3. Ensure team names are unique
-
-### Commit Message Format
-```
-git commit -m "Add 2026 final standings
-
-- Champion: [Name] with [Points] points
-- [Number] managers competed"
-```
-
-### Backup
-Keep a backup of `leaderboard.json` locally in case of accidents.
-
-## Future Features to Consider
-
-- 📊 Historical charts and trends
-- 🏆 Career statistics per manager
-- 📈 Weekly standings during season
-- 💬 Comments/celebration section
-- 🎯 Live scoring integration
-- 🐻 More Bears customization
-
-## Troubleshooting
-
-**Leaderboard not updating?**
-- Make sure JSON is valid (use jsonlint.com)
-- Clear browser cache (Ctrl+Shift+Delete)
-- Check browser console for errors (F12)
-
-**Custom domain not working?**
-- DNS changes take 24-48 hours to propagate
-- Verify DNS records are set correctly
-- Check GitHub Pages settings
-
-**Styling looks off?**
-- Make sure `css/style.css` is loading
-- Check file paths are relative
-- Clear browser cache
-
-## Browser Support
-
-✅ Chrome/Edge (latest)  
-✅ Firefox (latest)  
-✅ Safari (latest)  
-✅ Mobile browsers  
-
-## License
-
-MIT License - Use for your league!
-
----
-
-**Go Bears! 🧡**
-
-Made with 🏈 and ☕ for MurphDuel fantasy football.
+CloudFormation protects the IAM exports from deletion or incompatible changes while the application stack imports them. The S3 buckets use `Retain` policies so deleting a stack cannot silently delete league data or pipeline artifacts.

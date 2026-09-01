@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MurphDuel fantasy football standings and league history.">
+  <title>MurphDuel | Fantasy Football Standings</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#standings" aria-label="MurphDuel home">
+      <span class="brand-mark" aria-hidden="true">MD</span>
+      <span>
+        <strong>MurphDuel</strong>
+        <small>Fantasy football, settled.</small>
+      </span>
+    </a>
+    <p class="data-status" id="dataStatus" role="status">Loading standings…</p>
+  </header>
+
+  <main>
+    <section class="hero" id="standings">
+      <div class="hero-copy">
+        <p class="eyebrow">League archive</p>
+        <h1>Every season.<br><span>Every score.</span></h1>
+        <p class="hero-text">The official, view-only record of MurphDuel glory, heartbreak, and questionable roster decisions.</p>
+      </div>
+      <div class="season-switcher" aria-label="Choose a season">
+        <p>Season</p>
+        <div class="year-buttons" id="yearButtons"></div>
+      </div>
+    </section>
+
+    <section class="leaderboard-section" aria-labelledby="seasonTitle">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Final results</p>
+          <h2 id="seasonTitle">Standings</h2>
+        </div>
+        <p class="season-description" id="seasonDescription"></p>
+      </div>
+
+      <div class="table-shell">
+        <table class="leaderboard-table">
+          <thead>
+            <tr>
+              <th scope="col">Rank</th>
+              <th scope="col">Manager</th>
+              <th scope="col">Team</th>
+              <th scope="col" class="numeric">Points</th>
+              <th scope="col">Finish</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboardBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="stats-section" aria-labelledby="leagueNumbers">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">By the numbers</p>
+          <h2 id="leagueNumbers">League history</h2>
+        </div>
+      </div>
+      <div class="stats-grid">
+        <article><span id="totalSeasons">—</span><p>Seasons</p></article>
+        <article><span id="totalManagers">—</span><p>Managers</p></article>
+        <article><span id="totalChampions">—</span><p>Champions crowned</p></article>
+        <article><span id="totalPoints">—</span><p>Points scored</p></article>
+      </div>
+    </section>
+
+    <section class="hall-of-fame" aria-labelledby="hallOfFameTitle">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Immortalized</p>
+          <h2 id="hallOfFameTitle">Hall of Fame</h2>
+        </div>
+      </div>
+      <div class="champions-list" id="championsList"></div>
+    </section>
+  </main>
+
+  <footer>
+    <span class="brand-mark" aria-hidden="true">MD</span>
+    <p>MurphDuel Fantasy Football</p>
+    <p>Read the sheet. Respect the standings.</p>
+  </footer>
+</body>
+</html>
