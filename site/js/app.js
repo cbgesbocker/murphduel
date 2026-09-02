@@ -1,3 +1,5 @@
+import { normalizeData, parseCsv } from "./data.js";
+
 const elements = {
   status: document.querySelector("#dataStatus"),
   yearButtons: document.querySelector("#yearButtons"),
@@ -20,20 +22,27 @@ async function loadData() {
   try {
     const configResponse = await fetch("config.json", { cache: "no-store" });
     const config = configResponse.ok ? await configResponse.json() : {};
+    let spreadsheetError = null;
 
     if (config.googleSheetCsvUrl) {
-      const response = await fetch(config.googleSheetCsvUrl, { cache: "no-store" });
-      if (!response.ok) throw new Error(`Spreadsheet returned ${response.status}`);
-      const data = parseCsv(await response.text());
-      render(data);
-      elements.status.textContent = "Up to date from the spreadsheet";
-      return;
+      try {
+        const response = await fetch(config.googleSheetCsvUrl, { cache: "no-store" });
+        if (!response.ok) throw new Error(`Spreadsheet returned ${response.status}`);
+        render(normalizeData(parseCsv(await response.text())));
+        elements.status.textContent = "Up to date from the spreadsheet";
+        return;
+      } catch (error) {
+        spreadsheetError = error;
+        console.warn("Unable to load the spreadsheet; using saved standings", error);
+      }
     }
 
     const response = await fetch("leaderboard.json", { cache: "no-store" });
     if (!response.ok) throw new Error(`Leaderboard returned ${response.status}`);
-    render(await response.json());
-    elements.status.textContent = "Latest saved standings";
+    render(normalizeData(await response.json()));
+    elements.status.textContent = spreadsheetError
+      ? "Spreadsheet unavailable — showing saved standings"
+      : "Latest saved standings";
   } catch (error) {
     console.error("Unable to load standings", error);
     elements.status.textContent = "Couldn’t load the standings";
@@ -41,68 +50,8 @@ async function loadData() {
   }
 }
 
-function parseCsv(csv) {
-  const rows = [];
-  let row = [];
-  let value = "";
-  let quoted = false;
-
-  for (let index = 0; index < csv.length; index += 1) {
-    const character = csv[index];
-    const next = csv[index + 1];
-    if (character === '"' && quoted && next === '"') {
-      value += '"';
-      index += 1;
-    } else if (character === '"') {
-      quoted = !quoted;
-    } else if (character === "," && !quoted) {
-      row.push(value.trim());
-      value = "";
-    } else if ((character === "\n" || character === "\r") && !quoted) {
-      if (character === "\r" && next === "\n") index += 1;
-      row.push(value.trim());
-      if (row.some(Boolean)) rows.push(row);
-      row = [];
-      value = "";
-    } else {
-      value += character;
-    }
-  }
-  row.push(value.trim());
-  if (row.some(Boolean)) rows.push(row);
-
-  const headers = rows.shift().map((header) => header.toLowerCase().replace(/\s+/g, ""));
-  const seasons = new Map();
-
-  rows.forEach((values) => {
-    const record = Object.fromEntries(headers.map((header, index) => [header, values[index] ?? ""]));
-    const year = Number.parseInt(record.year, 10);
-    const points = Number.parseFloat(record.points);
-    if (!Number.isInteger(year) || !Number.isFinite(points)) return;
-    if (!seasons.has(year)) seasons.set(year, []);
-    seasons.get(year).push({
-      manager: record.manager,
-      teamName: record.teamname || record.team,
-      points
-    });
-  });
-
-  return {
-    seasons: [...seasons.entries()]
-      .map(([year, leaderboard]) => ({
-        year,
-        leaderboard: leaderboard.sort((left, right) => right.points - left.points)
-      }))
-      .sort((left, right) => right.year - left.year)
-  };
-}
-
 function render(data) {
-  const seasons = [...(data.seasons ?? [])]
-    .filter((season) => Array.isArray(season.leaderboard) && season.leaderboard.length)
-    .sort((left, right) => right.year - left.year);
-
-  if (!seasons.length) throw new Error("No seasons were found");
+  const seasons = data.seasons;
   renderSeasonButtons(seasons);
   renderLeaderboard(seasons[0]);
   renderStats(seasons);
@@ -140,7 +89,6 @@ function renderLeaderboard(season) {
     if (index === 0) row.className = "champion";
     appendCell(row, `${medal(index)} ${index + 1}`.trim(), "rank");
     appendCell(row, entry.manager, "manager");
-    appendCell(row, entry.teamName, "team");
     appendCell(row, number.format(Number(entry.points)), "numeric");
     appendCell(row, finish(index), "finish");
     elements.leaderboard.append(row);

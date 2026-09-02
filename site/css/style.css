@@ -211,7 +211,7 @@ h2 {
 
 .leaderboard-table {
   width: 100%;
-  min-width: 720px;
+  min-width: 600px;
   border-collapse: collapse;
 }
 
@@ -234,7 +234,6 @@ h2 {
 .leaderboard-table tbody tr.champion { background: linear-gradient(90deg, rgba(204, 0, 0, 0.48), transparent 76%); }
 .leaderboard-table .rank { width: 6rem; color: #ff8b96; font: 600 1.25rem/1 var(--display); }
 .leaderboard-table .manager { font-weight: 700; }
-.leaderboard-table .team { color: var(--muted); }
 .leaderboard-table .numeric { text-align: right; font-variant-numeric: tabular-nums; }
 .leaderboard-table .finish { color: #ff8b96; font-size: 0.85rem; }
 

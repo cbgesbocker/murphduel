@@ -1,11 +1,15 @@
 import { readFile } from "node:fs/promises";
+import assert from "node:assert/strict";
+import { normalizeData, parseCsv } from "../site/js/data.js";
 
 const requiredFiles = [
   "site/index.html",
   "site/css/style.css",
   "site/js/app.js",
+  "site/js/data.js",
   "site/config.json",
   "site/leaderboard.json",
+  "site/og.png",
   "infrastructure/buildspec.yml",
   "infrastructure/template.yml"
 ];
@@ -27,13 +31,36 @@ for (const season of data.seasons) {
     throw new Error("Each season needs an integer year and a non-empty leaderboard");
   }
   for (const entry of season.leaderboard) {
-    if (!entry.manager || !entry.teamName || !Number.isFinite(entry.points)) {
+    if (!entry.manager || !Number.isFinite(entry.points)) {
       throw new Error(`Invalid leaderboard entry in ${season.year}`);
     }
   }
 }
 
 const appSource = await readFile("site/js/app.js", "utf8");
-new Function(appSource);
+assert.match(appSource, /from "\.\/data\.js"/);
+
+const html = await readFile("site/index.html", "utf8");
+assert.match(html, /<meta property="og:image" content="https:\/\/www\.murphduel\.com\/og\.png">/);
+assert.match(html, /<meta name="twitter:card" content="summary_large_image">/);
+
+const normalized = normalizeData(data);
+const expectedYears = data.seasons.map(({ year }) => year).sort((left, right) => right - left);
+assert.deepEqual(normalized.seasons.map(({ year }) => year), expectedYears);
+assert.ok(normalized.seasons.every((season) => season.leaderboard.every((entry, index, entries) => (
+  index === 0 || entries[index - 1].points >= entry.points
+))));
+
+const csv = [
+  "year,manager,teamName,points",
+  '2024,"Murphy, Pat",Red Birds,1200.25',
+  "2025,Alex,Fourth and Long,1400",
+  "2025,Jordan,Goal Diggers,1500.5",
+  "invalid,Skipped,No Score,nope"
+].join("\r\n");
+const parsed = normalizeData(parseCsv(csv));
+assert.deepEqual(parsed.seasons.map(({ year }) => year), [2025, 2024]);
+assert.equal(parsed.seasons[0].leaderboard[0].manager, "Jordan");
+assert.equal(parsed.seasons[1].leaderboard[0].manager, "Murphy, Pat");
 
 console.log(`Validated ${requiredFiles.length} files and ${data.seasons.length} seasons.`);

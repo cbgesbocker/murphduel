@@ -33,6 +33,7 @@ infrastructure/
   buildspec.yml             Static-site publish and CloudFront invalidation
 scripts/
   serve.mjs                 Dependency-free Node development server
+  sync-sheets.mjs           Imports final standings through the Google Sheets API
   validate.mjs              Source and data checks
   deploy-infrastructure.sh  Application stack deployment
 ```
@@ -55,6 +56,18 @@ npm test
 
 ## Spreadsheet data
 
+The checked-in standings are generated from the public workbook `Copy of Fanduel 26'`. The importer discovers every tab named like `Fanduel 25'`, reads its final placement table through the Google Sheets API, and writes `site/leaderboard.json` without exposing the API key to visitors.
+
+Store the key in the ignored `.env` file, then refresh the saved standings:
+
+```bash
+npm run sync-data
+```
+
+The key must be restricted to the Google Sheets API and the `https://www.murphduel.com/*` referrer.
+
+### Optional published CSV
+
 The site supports a published CSV endpoint without granting visitors edit access. Set `googleSheetCsvUrl` in `site/config.json`:
 
 ```json
@@ -70,7 +83,7 @@ year,manager,teamName,points
 2026,Conner,Fourth and Long,1847.50
 ```
 
-Rows are grouped by year and sorted by points in the browser. If the URL is blank, the site loads `site/leaderboard.json` instead. A spreadsheet must be published for anonymous read access; do not put credentials or a private sheet URL in the site configuration.
+Rows are grouped by year and sorted by points in the browser. If the URL is blank or the published spreadsheet is temporarily unavailable, the site loads `site/leaderboard.json` instead and labels the standings as saved data. A spreadsheet must be published for anonymous read access; do not put credentials or a private sheet URL in the site configuration.
 
 ## First deployment
 

@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "node scripts/serve.mjs",
+    "sync-data": "node scripts/sync-sheets.mjs",
     "test": "node scripts/validate.mjs"
   },
   "engines": {

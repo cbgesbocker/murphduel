@@ -1,64 +1,170 @@
 {
   "seasons": [
     {
-      "year": 2024,
-      "description": "Final standings from the 2024 season.",
+      "year": 2025,
+      "description": "Final Fanduel standings from the 2025 season.",
       "leaderboard": [
         {
-          "manager": "The Victorious One",
-          "teamName": "Bears Necessities",
-          "points": 1847.50
+          "manager": "Garrett May",
+          "points": 2628.33
         },
         {
-          "manager": "Close Contender",
-          "teamName": "Monsters Inc",
-          "points": 1823.75
+          "manager": "Mike Strang",
+          "points": 2488
         },
         {
-          "manager": "Third Threat",
-          "teamName": "Victory Lap",
-          "points": 1802.30
+          "manager": "Bryan Sirt",
+          "points": 2483.13
         },
         {
-          "manager": "Fourth Place",
-          "teamName": "Almost There",
-          "points": 1791.20
+          "manager": "Alex Murphy",
+          "points": 2464.73
         },
         {
-          "manager": "Fifth Finisher",
-          "teamName": "Mid Pack",
-          "points": 1778.90
+          "manager": "Ray Latourette",
+          "points": 2457.49
+        },
+        {
+          "manager": "Braiton Holloway",
+          "points": 2378.29
+        },
+        {
+          "manager": "Mario Meccia",
+          "points": 2367.31
+        },
+        {
+          "manager": "Kam Jarog",
+          "points": 2362.39
+        },
+        {
+          "manager": "Jake Allen",
+          "points": 2337.63
+        },
+        {
+          "manager": "Kyle Chirico",
+          "points": 2331.29
+        },
+        {
+          "manager": "Conner Gesbocker",
+          "points": 2324.04
+        },
+        {
+          "manager": "Fez Damulira",
+          "points": 2305.51
+        },
+        {
+          "manager": "Robbie Tonge",
+          "points": 2286.5
+        },
+        {
+          "manager": "Brad Windsor",
+          "points": 2251.53
+        },
+        {
+          "manager": "Chris Zaccagnini",
+          "points": 2216
+        },
+        {
+          "manager": "TJ Staples",
+          "points": 2207.09
+        },
+        {
+          "manager": "Mitch Whittington",
+          "points": 2161.88
+        },
+        {
+          "manager": "Rigo Sanchez",
+          "points": 2048.91
+        },
+        {
+          "manager": "Parker McCoy",
+          "points": 2037.83
         }
       ]
     },
     {
-      "year": 2025,
-      "description": "The latest standings on the sheet.",
+      "year": 2024,
+      "description": "Final Fanduel standings from the 2024 season.",
       "leaderboard": [
         {
-          "manager": "Current Leader",
-          "teamName": "Championship Bound",
-          "points": 1652.80
+          "manager": "Kam Jarog",
+          "points": 2607.93
         },
         {
-          "manager": "Strong Second",
-          "teamName": "Chase Mode",
-          "points": 1641.50
+          "manager": "Mike Strang",
+          "points": 2592.85
         },
         {
-          "manager": "Climbing Fast",
-          "teamName": "The Comeback",
-          "points": 1628.70
+          "manager": "Bryan Sirt",
+          "points": 2586.22
         },
         {
-          "manager": "Mid Season",
-          "teamName": "Still Hoping",
-          "points": 1605.40
+          "manager": "Chris Zaccagnini",
+          "points": 2585.41
         },
         {
-          "manager": "Fighting Back",
-          "teamName": "Never Say Die",
-          "points": 1589.20
+          "manager": "Garrett",
+          "points": 2550.68
+        },
+        {
+          "manager": "Kyle Chirico",
+          "points": 2457.55
+        },
+        {
+          "manager": "Ray Latourette",
+          "points": 2453.31
+        },
+        {
+          "manager": "Rigo Sanchez",
+          "points": 2421.63
+        },
+        {
+          "manager": "Parker McCoy",
+          "points": 2399.15
+        },
+        {
+          "manager": "Mario Meccia",
+          "points": 2361.49
+        },
+        {
+          "manager": "Robbie Tonge",
+          "points": 2345.76
+        },
+        {
+          "manager": "TJ Staples",
+          "points": 2325.91
+        },
+        {
+          "manager": "Fez Damulira",
+          "points": 2303.75
+        },
+        {
+          "manager": "Ryan Artega",
+          "points": 2286.92
+        },
+        {
+          "manager": "Brad Windsor",
+          "points": 2249.37
+        },
+        {
+          "manager": "Jake Allen",
+          "points": 2236.04
+        },
+        {
+          "manager": "Braiton Holloway",
+          "points": 2225.77
+        },
+        {
+          "manager": "Alex Murphy",
+          "points": 2203.71
+        },
+        {
+          "manager": "Mitch Whittington",
+          "points": 2172.69
+        },
+        {
+          "manager": "Conner Gesbocker",
+          "points": 2106.4
         }
       ]
     }
