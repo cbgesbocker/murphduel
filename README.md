@@ -57,7 +57,11 @@ npm test
 
 ## Spreadsheet data
 
-The checked-in standings are generated from the public workbook `Copy of Fanduel 26'`. The importer discovers every tab named like `Fanduel 25'`, reads its final placement table through the Google Sheets API, and writes `site/leaderboard.json` without exposing the API key to visitors.
+The live site reads the public workbook `Copy of Fanduel 26'` directly on each visit. It asks the Google Sheets API for the workbook's actual tab list, reads every tab named like `Fanduel 26'`, and treats weekly payouts and final placement as independent sections. A newly added, correctly named season tab appears on the weekly-money page without a site deployment even when it has no final-placement table. It appears on the standings page once final standings are present. If Google is unavailable, the site falls back to the checked-in `site/leaderboard.json` data.
+
+The production `config.json` is preserved outside source control because it contains the browser-restricted Sheets API key. The key must remain limited to the Google Sheets API and the MurphDuel website referrers.
+
+The saved fallback can still be refreshed through the Google Sheets API without exposing the API key to visitors. The importer discovers every matching season tab and writes `site/leaderboard.json`.
 
 Store the key in the ignored `.env` file, then refresh the saved standings:
 

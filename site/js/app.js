@@ -1,4 +1,5 @@
-import { normalizeData, parseCsv } from "./data.js";
+import { normalizeData } from "./data.js";
+import { loadLeagueData } from "./live-data.js";
 
 const elements = {
   status: document.querySelector("#dataStatus"),
@@ -20,29 +21,9 @@ const number = new Intl.NumberFormat("en-US", {
 
 async function loadData() {
   try {
-    const configResponse = await fetch("config.json", { cache: "no-store" });
-    const config = configResponse.ok ? await configResponse.json() : {};
-    let spreadsheetError = null;
-
-    if (config.googleSheetCsvUrl) {
-      try {
-        const response = await fetch(config.googleSheetCsvUrl, { cache: "no-store" });
-        if (!response.ok) throw new Error(`Spreadsheet returned ${response.status}`);
-        render(normalizeData(parseCsv(await response.text())));
-        elements.status.textContent = "Up to date from the spreadsheet";
-        return;
-      } catch (error) {
-        spreadsheetError = error;
-        console.warn("Unable to load the spreadsheet; using saved standings", error);
-      }
-    }
-
-    const response = await fetch("leaderboard.json", { cache: "no-store" });
-    if (!response.ok) throw new Error(`Leaderboard returned ${response.status}`);
-    render(normalizeData(await response.json()));
-    elements.status.textContent = spreadsheetError
-      ? "Spreadsheet unavailable — showing saved standings"
-      : "Latest saved standings";
+    const { data, source } = await loadLeagueData();
+    render(normalizeData(data));
+    elements.status.textContent = source === "live" ? "Live from the spreadsheet" : "Showing saved standings";
   } catch (error) {
     console.error("Unable to load standings", error);
     elements.status.textContent = "Couldn’t load the standings";

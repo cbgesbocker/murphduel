@@ -1,3 +1,5 @@
+import { loadLeagueData } from "./live-data.js";
+
 const elements = {
   status: document.querySelector("#weeklyDataStatus"),
   yearButtons: document.querySelector("#weeklyYearButtons"),
@@ -19,9 +21,7 @@ const money = new Intl.NumberFormat("en-US", {
 
 async function loadWeeklyData() {
   try {
-    const response = await fetch("leaderboard.json", { cache: "no-store" });
-    if (!response.ok) throw new Error(`Leaderboard returned ${response.status}`);
-    const data = await response.json();
+    const { data, source } = await loadLeagueData();
     const seasons = (data.seasons ?? [])
       .filter((season) => Array.isArray(season.weeks) && season.weeks.length)
       .sort((left, right) => right.year - left.year);
@@ -30,7 +30,7 @@ async function loadWeeklyData() {
     renderSeasonButtons(seasons);
     const requestedYear = Number.parseInt(new URLSearchParams(location.search).get("year"), 10);
     selectSeason(seasons.find((season) => season.year === requestedYear) ?? seasons[0]);
-    elements.status.textContent = "Latest saved weekly results";
+    elements.status.textContent = source === "live" ? "Live from the spreadsheet" : "Showing saved weekly results";
   } catch (error) {
     console.error("Unable to load weekly results", error);
     elements.status.textContent = "Couldn’t load the weekly results";

@@ -1,6 +1,7 @@
 import { readFile } from "node:fs/promises";
 import assert from "node:assert/strict";
 import { normalizeData, parseCsv } from "../site/js/data.js";
+import { parseSeasonRows } from "../site/js/live-data.js";
 
 const requiredFiles = [
   "site/index.html",
@@ -8,6 +9,7 @@ const requiredFiles = [
   "site/css/style.css",
   "site/js/app.js",
   "site/js/data.js",
+  "site/js/live-data.js",
   "site/js/season.js",
   "site/config.json",
   "site/leaderboard.json",
@@ -22,6 +24,9 @@ await Promise.all(requiredFiles.map((path) => readFile(path)));
 const config = JSON.parse(await readFile("site/config.json", "utf8"));
 if (typeof config.googleSheetCsvUrl !== "string") {
   throw new Error("site/config.json must contain a googleSheetCsvUrl string");
+}
+if (typeof config.googleSheetId !== "string" || typeof config.googleSheetApiKey !== "string") {
+  throw new Error("site/config.json must contain Google Sheet ID and API key strings");
 }
 
 const data = JSON.parse(await readFile("site/leaderboard.json", "utf8"));
@@ -55,6 +60,7 @@ for (const season of data.seasons) {
 
 const appSource = await readFile("site/js/app.js", "utf8");
 assert.match(appSource, /from "\.\/data\.js"/);
+assert.match(appSource, /from "\.\/live-data\.js"/);
 
 const html = await readFile("site/index.html", "utf8");
 assert.match(html, /<meta property="og:image" content="https:\/\/www\.murphduel\.com\/og\.png">/);
@@ -85,6 +91,32 @@ const parsed = normalizeData(parseCsv(csv));
 assert.deepEqual(parsed.seasons.map(({ year }) => year), [2025, 2024]);
 assert.equal(parsed.seasons[0].leaderboard[0].manager, "Jordan");
 assert.equal(parsed.seasons[1].leaderboard[0].manager, "Murphy, Pat");
+
+const sheetRows = [
+  ["PAYOUT"],
+  ["", "Week 1"],
+  ["Jordan", 25],
+  ["Alex", -10],
+  [],
+  ["PLACEMENT"],
+  ["", "", "Player", "Total"],
+  ["", "", "Jordan", "1,500.50"],
+  ["", "", "Alex", 1400]
+];
+const sheetSeason = parseSeasonRows("Fanduel 26'", sheetRows);
+assert.equal(sheetSeason.year, 2026);
+assert.equal(sheetSeason.leaderboard[0].manager, "Jordan");
+assert.equal(sheetSeason.weeks[0].results[1].amount, -10);
+
+const weeklyOnlyRows = [
+  ["PAYOUT"],
+  ["", "Week 1"],
+  ["Jordan", 25],
+  ["Alex", -10]
+];
+const weeklyOnlySeason = parseSeasonRows("Fanduel 26'", weeklyOnlyRows);
+assert.equal(weeklyOnlySeason.leaderboard.length, 0);
+assert.equal(weeklyOnlySeason.weeks[0].results.length, 2);
 
 console.log(
   `Validated ${requiredFiles.length} files, ${data.seasons.length} seasons, and `
