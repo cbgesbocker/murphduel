@@ -71,12 +71,35 @@ button, a { font: inherit; }
 
 .data-status { margin: 0; font-size: 0.82rem; }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.site-nav { display: flex; gap: 0.3rem; }
+
+.site-nav a {
+  padding: 0.55rem 0.75rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible,
+.site-nav a[aria-current="page"] { color: var(--paper); background: rgba(255, 255, 255, 0.08); }
+
 main { overflow: hidden; }
 
 .hero,
+.weekly-hero,
 .leaderboard-section,
 .stats-section,
-.hall-of-fame {
+.hall-of-fame,
+.weekly-section,
+.ledger-section {
   width: min(1180px, calc(100% - 4rem));
   margin-inline: auto;
 }
@@ -95,6 +118,24 @@ main { overflow: hidden; }
     var(--red);
   box-shadow: 0 18px 0 var(--red-dark);
 }
+
+.weekly-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 4rem;
+  align-items: end;
+  margin-top: 2rem;
+  padding: clamp(3.5rem, 7vw, 6rem) clamp(1.5rem, 5vw, 4rem) 3.5rem;
+  border-left: 7px solid var(--red);
+  background:
+    linear-gradient(110deg, rgba(204, 0, 0, 0.34), transparent 44%),
+    repeating-linear-gradient(135deg, transparent 0 42px, rgba(255, 255, 255, 0.025) 42px 44px),
+    var(--black-light);
+  box-shadow: 0 18px 0 #111;
+}
+
+.weekly-hero h1 { font-size: clamp(3.8rem, 8vw, 7rem); }
+.weekly-hero .eyebrow { color: #ff8b96; }
 
 .hero::after {
   content: "RED\A BIRD";
@@ -178,7 +219,9 @@ h1 span { color: var(--paper); }
 
 .leaderboard-section,
 .stats-section,
-.hall-of-fame { padding: 3.5rem 0; }
+.hall-of-fame,
+.weekly-section,
+.ledger-section { padding: 3.5rem 0; }
 
 .section-heading {
   display: flex;
@@ -274,6 +317,118 @@ h2 {
 .champion-card p { margin-bottom: 0.35rem; color: var(--muted); }
 .champion-card .win-count { color: #ff8b96; font-weight: 700; }
 
+.weekly-heading { align-items: center; }
+
+.week-picker {
+  display: grid;
+  gap: 0.45rem;
+  min-width: 12rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.week-picker select {
+  width: 100%;
+  padding: 0.8rem 2.3rem 0.8rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  color: var(--paper);
+  background: var(--black-light);
+  font: 700 1rem var(--body);
+}
+
+.week-summary {
+  display: grid;
+  grid-template-columns: 1.5fr 1.5fr 1fr 1fr;
+  border: 1px solid var(--line);
+  border-top: 5px solid var(--red);
+  background: var(--black-light);
+}
+
+.week-summary article {
+  min-width: 0;
+  padding: 1.5rem;
+  border-right: 1px solid var(--line);
+}
+
+.week-summary article:last-child { border-right: 0; }
+
+.summary-label {
+  margin-bottom: 1rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.summary-list-card ul { display: grid; gap: 0.55rem; margin: 0; padding: 0; list-style: none; }
+.summary-list-card li { display: flex; justify-content: space-between; gap: 1rem; font-size: 0.9rem; }
+.winners-card li strong { color: #67d798; }
+.losers-card li strong { color: #ff6673; }
+.summary-list-card .empty-result { color: var(--muted); }
+
+.summary-number-card strong {
+  display: block;
+  color: var(--paper);
+  font: 600 clamp(2rem, 4vw, 3.75rem)/1 var(--display);
+  font-variant-numeric: tabular-nums;
+}
+
+.ledger-shell { max-height: min(72vh, 50rem); }
+
+.ledger-table {
+  width: max-content;
+  min-width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.84rem;
+  white-space: nowrap;
+}
+
+.ledger-table th,
+.ledger-table td {
+  min-width: 7rem;
+  padding: 0.85rem 1rem;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.ledger-table th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  color: var(--muted);
+  background: #111;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ledger-table th:first-child,
+.ledger-table td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  min-width: 12rem;
+  text-align: left;
+  background: var(--black-light);
+}
+
+.ledger-table th:first-child { z-index: 3; background: #111; }
+.ledger-table tr:hover td { background: #222; }
+.ledger-table tr:hover td:first-child { background: #222; }
+.ledger-manager { color: var(--paper); font-weight: 700; }
+.money-positive { color: #67d798; }
+.money-negative { color: #ff6673; }
+.money-zero { color: #777; }
+.ledger-net { font-weight: 800; }
+
 footer {
   display: flex;
   align-items: center;
@@ -290,25 +445,36 @@ footer p { margin: 0; }
 footer p:last-child { margin-left: auto; }
 
 @media (max-width: 780px) {
-  .site-header { padding: 1rem; }
+  .site-header { align-items: flex-start; padding: 1rem; }
   .brand small { display: none; }
-  .hero, .leaderboard-section, .stats-section, .hall-of-fame { width: min(100% - 2rem, 1180px); }
+  .header-actions { align-items: flex-end; flex-direction: column; gap: 0.5rem; }
+  .site-nav a { padding: 0.45rem 0.55rem; }
+  .hero, .weekly-hero, .leaderboard-section, .stats-section, .hall-of-fame, .weekly-section, .ledger-section { width: min(100% - 2rem, 1180px); }
   .hero { grid-template-columns: 1fr; gap: 2rem; padding-top: 4rem; }
+  .weekly-hero { grid-template-columns: 1fr; gap: 2rem; padding-top: 3.5rem; }
   .season-switcher { min-width: 0; }
   .section-heading { display: block; }
+  .week-picker { margin-top: 1.25rem; }
   .season-description { margin-top: 1rem; text-align: left; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .stats-grid article:nth-child(2) { border-right: 0; }
   .stats-grid article:nth-child(-n + 2) { border-bottom: 1px solid var(--line); }
   .champions-list { grid-template-columns: 1fr; }
+  .week-summary { grid-template-columns: 1fr 1fr; }
+  .week-summary article:nth-child(2) { border-right: 0; }
+  .week-summary article:nth-child(-n + 2) { border-bottom: 1px solid var(--line); }
   footer p:last-child { display: none; }
 }
 
 @media (max-width: 430px) {
   .data-status { max-width: 8rem; text-align: right; }
+  .site-header .data-status { display: none; }
   .stats-grid { grid-template-columns: 1fr; }
   .stats-grid article { border-right: 0; border-bottom: 1px solid var(--line); }
   .stats-grid article:last-child { border-bottom: 0; }
+  .week-summary { grid-template-columns: 1fr; }
+  .week-summary article { border-right: 0; border-bottom: 1px solid var(--line); }
+  .week-summary article:last-child { border-bottom: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {

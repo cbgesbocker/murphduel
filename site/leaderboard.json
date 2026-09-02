@@ -80,6 +80,1871 @@
           "manager": "Parker McCoy",
           "points": 2037.83
         }
+      ],
+      "weeks": [
+        {
+          "label": "Week 1",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": -10
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": -10
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": 10
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": -10
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": -10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": -10
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": -10
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": -10
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": 0
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": -10
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": 40
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": 65
+            },
+            {
+              "manager": "Garrett May",
+              "amount": -10
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": 25
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": -10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": -10
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": -10
+            }
+          ]
+        },
+        {
+          "label": "Week 2",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": -10
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": -10
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": -10
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": -10
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": -10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": 65
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": -10
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": -10
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": -10
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": 40
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": -10
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": -10
+            },
+            {
+              "manager": "Garrett May",
+              "amount": -10
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": 0
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": 10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": -10
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": 25
+            }
+          ]
+        },
+        {
+          "label": "Week 3",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": -10
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": -10
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": -10
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": -10
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": -10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": -10
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": -10
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": -10
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": -10
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": 10
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": 0
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": -10
+            },
+            {
+              "manager": "Garrett May",
+              "amount": -10
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": 40
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": 25
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": -10
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": 65
+            }
+          ]
+        },
+        {
+          "label": "Week 4",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": -10
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": 65
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": -10
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": 0
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": -10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": -10
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": -10
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": -10
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": 40
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": -10
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": -10
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": -10
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": -10
+            },
+            {
+              "manager": "Garrett May",
+              "amount": -10
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": -10
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": -10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": 10
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": 25
+            }
+          ]
+        },
+        {
+          "label": "Week 5",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": 25
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": -10
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": -10
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": -10
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": -10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": -10
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": -10
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": -10
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": 0
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": -10
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": 40
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": -10
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": 10
+            },
+            {
+              "manager": "Garrett May",
+              "amount": 65
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": -10
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": -10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": -10
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": -10
+            }
+          ]
+        },
+        {
+          "label": "Week 6",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": 25
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": -10
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": 65
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": -10
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": -10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": 0
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": -10
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": -10
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": -10
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": -10
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": -10
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": -10
+            },
+            {
+              "manager": "Garrett May",
+              "amount": 10
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": -10
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": -10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": 40
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": -10
+            }
+          ]
+        },
+        {
+          "label": "Week 7",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": 65
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": -10
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": -10
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": -10
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": 10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": -10
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": 0
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": -10
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": -10
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": -10
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": -10
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": -10
+            },
+            {
+              "manager": "Garrett May",
+              "amount": -10
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": -10
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": -10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": 25
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": 40
+            }
+          ]
+        },
+        {
+          "label": "Week 8",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": 25
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": -10
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": 10
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": -10
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": 65
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": -10
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": -10
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": -10
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": 0
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": -10
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": -10
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": -10
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": -10
+            },
+            {
+              "manager": "Garrett May",
+              "amount": 40
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": -10
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": -10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": -10
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": -10
+            }
+          ]
+        },
+        {
+          "label": "Week 9",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": 25
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": -10
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": -10
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": -10
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": -10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": -10
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": 65
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": -10
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": -10
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": 40
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": 10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": -10
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": -10
+            },
+            {
+              "manager": "Garrett May",
+              "amount": 0
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": -10
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": -10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": -10
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": -10
+            }
+          ]
+        },
+        {
+          "label": "Week 10",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": -10
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": 10
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": 40
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": 25
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": -10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": -10
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": -10
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": -10
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": -10
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": -10
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": -10
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": -10
+            },
+            {
+              "manager": "Garrett May",
+              "amount": 65
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": -10
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": -10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": -10
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": 0
+            }
+          ]
+        },
+        {
+          "label": "Week 11",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": -10
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": 65
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": 40
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": 25
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": 10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": -10
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": -10
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": -10
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": -10
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": -10
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": 0
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": -10
+            },
+            {
+              "manager": "Garrett May",
+              "amount": -10
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": -10
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": -10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": -10
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": -10
+            }
+          ]
+        },
+        {
+          "label": "Week 12",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": -10
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": -10
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": -10
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": 25
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": -10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": -10
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": -10
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": 10
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": -10
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": -10
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": -10
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": -10
+            },
+            {
+              "manager": "Garrett May",
+              "amount": 40
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": 0
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": -10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": -10
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": 65
+            }
+          ]
+        },
+        {
+          "label": "TG",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": 65
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": -10
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": -10
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": 0
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": -10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": -10
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": -10
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": 40
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": -10
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": -10
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": -10
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": -10
+            },
+            {
+              "manager": "Garrett May",
+              "amount": 25
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": 10
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": -10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": -10
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": -10
+            }
+          ]
+        },
+        {
+          "label": "Week 13",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": -10
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": -10
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": -10
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": -10
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": -10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": -10
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": 10
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": 65
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": -10
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": 0
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": 40
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": -10
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": -10
+            },
+            {
+              "manager": "Garrett May",
+              "amount": -10
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": -10
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": -10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": 25
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": -10
+            }
+          ]
+        },
+        {
+          "label": "Week 14",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": -10
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": -10
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": -10
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": 40
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": -10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": -10
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": -10
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": -10
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": -10
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": 65
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": -10
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": -10
+            },
+            {
+              "manager": "Garrett May",
+              "amount": 25
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": 0
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": 10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": -10
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": -10
+            }
+          ]
+        },
+        {
+          "label": "Week 15",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": -10
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": -10
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": -10
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": -10
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": 40
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": -10
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": 10
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": -10
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": 25
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": 0
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": -10
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": -10
+            },
+            {
+              "manager": "Garrett May",
+              "amount": -10
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": -10
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": 65
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": -10
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": -10
+            }
+          ]
+        },
+        {
+          "label": "Week 16",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": 40
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": -10
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": -10
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": 0
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": -10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": -10
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": 65
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": -10
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": -10
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": -20
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": 25
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": -10
+            },
+            {
+              "manager": "Garrett May",
+              "amount": -10
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": -10
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": 10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": -10
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": -10
+            }
+          ]
+        },
+        {
+          "label": "Week 17",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": -10
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": 0
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": -10
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": -10
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": -10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": -10
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": -10
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": 65
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": -20
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": -10
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": -10
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": -10
+            },
+            {
+              "manager": "Garrett May",
+              "amount": -10
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": 10
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": 25
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": 40
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": -10
+            }
+          ]
+        },
+        {
+          "label": "Week 18",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": -10
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": -10
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": 25
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": -10
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": -10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": -10
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": 65
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": -10
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": 10
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": 40
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": -10
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": -10
+            },
+            {
+              "manager": "Garrett May",
+              "amount": -10
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": 0
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": -10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": -10
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": -10
+            }
+          ]
+        },
+        {
+          "label": "Wildcard",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": -10
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": -20
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": -10
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": -10
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": -10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": 25
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": -10
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": -10
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": 40
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": -10
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": 65
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": -10
+            },
+            {
+              "manager": "Garrett May",
+              "amount": 0
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": -10
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": -10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": -10
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": 10
+            }
+          ]
+        },
+        {
+          "label": "Div Round",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": -10
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": -10
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": -10
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": 25
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": -10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": 40
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": 65
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": -10
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": -10
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": -10
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": 10
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": 0
+            },
+            {
+              "manager": "Garrett May",
+              "amount": -10
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": -10
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": -10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": -10
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": -10
+            }
+          ]
+        },
+        {
+          "label": "Conf Champ",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": -10
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": -10
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": -10
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": -10
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": -10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": 10
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": 65
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": -10
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": -10
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": 25
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": -10
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": -10
+            },
+            {
+              "manager": "Garrett May",
+              "amount": 40
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": -10
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": -10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": 0
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": -10
+            }
+          ]
+        },
+        {
+          "label": "SUPERBOWL",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": -10
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": 25
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": 10
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": 40
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": -10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": -20
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": -10
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": -20
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": -10
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": 65
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": -10
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": -10
+            },
+            {
+              "manager": "Garrett May",
+              "amount": 10
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": -20
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": -10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": -10
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": -20
+            }
+          ]
+        }
       ]
     },
     {
@@ -165,6 +2030,1963 @@
         {
           "manager": "Conner Gesbocker",
           "points": 2106.4
+        }
+      ],
+      "weeks": [
+        {
+          "label": "Week 1",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": -10
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": -10
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": 70
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": -10
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": -10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": 25
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": 0
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": -10
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": 10
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": -10
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": -10
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": -10
+            },
+            {
+              "manager": "Garrett",
+              "amount": -10
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": -10
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": -10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": -10
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": -10
+            },
+            {
+              "manager": "Ryan Artega",
+              "amount": 45
+            }
+          ]
+        },
+        {
+          "label": "Week 2",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": -10
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": -10
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": -10
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": -10
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": -10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": 45
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": -10
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": 70
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": -10
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": -10
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": 0
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": -10
+            },
+            {
+              "manager": "Garrett",
+              "amount": 10
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": 25
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": -10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": -10
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": -10
+            },
+            {
+              "manager": "Ryan Artega",
+              "amount": -10
+            }
+          ]
+        },
+        {
+          "label": "Week 3",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": -10
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": -10
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": -10
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": 45
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": -10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": -10
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": -10
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": 70
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": -10
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": -10
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": -10
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": 25
+            },
+            {
+              "manager": "Garrett",
+              "amount": -10
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": -10
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": 10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": -10
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": -10
+            },
+            {
+              "manager": "Ryan Artega",
+              "amount": 0
+            }
+          ]
+        },
+        {
+          "label": "Week 4",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": 10
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": -10
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": -10
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": 45
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": -10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": -10
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": 25
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": -10
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": 0
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": 70
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": -10
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": -10
+            },
+            {
+              "manager": "Garrett",
+              "amount": -10
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": -10
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": -10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": -10
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": -10
+            },
+            {
+              "manager": "Ryan Artega",
+              "amount": -10
+            }
+          ]
+        },
+        {
+          "label": "Week 5",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": 25
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": -10
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": -10
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": -10
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": -10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": -10
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": 10
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": -10
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": -10
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": -10
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": -10
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": 0
+            },
+            {
+              "manager": "Garrett",
+              "amount": 70
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": -10
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": 45
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": -10
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": -10
+            },
+            {
+              "manager": "Ryan Artega",
+              "amount": -10
+            }
+          ]
+        },
+        {
+          "label": "Week 6",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": -10
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": -10
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": -10
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": 25
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": -10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": -10
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": -10
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": -10
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": 10
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": 70
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": 45
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": -10
+            },
+            {
+              "manager": "Garrett",
+              "amount": -10
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": -10
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": -10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": -10
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": -10
+            },
+            {
+              "manager": "Ryan Artega",
+              "amount": 0
+            }
+          ]
+        },
+        {
+          "label": "Week 7",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": 70
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": -10
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": 25
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": 0
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": 10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": -10
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": -10
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": -10
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": -10
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": -10
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": -10
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": 45
+            },
+            {
+              "manager": "Garrett",
+              "amount": -10
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": -10
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": -10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": -10
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": -10
+            },
+            {
+              "manager": "Ryan Artega",
+              "amount": -10
+            }
+          ]
+        },
+        {
+          "label": "Week 8",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": -10
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": 0
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": 70
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": -10
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": -10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": 45
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": -10
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": -10
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": -10
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": -10
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": -10
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": 25
+            },
+            {
+              "manager": "Garrett",
+              "amount": -10
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": -10
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": -10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": 10
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": -10
+            },
+            {
+              "manager": "Ryan Artega",
+              "amount": -10
+            }
+          ]
+        },
+        {
+          "label": "Week 9",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": -10
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": -10
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": -10
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": -10
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": -10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": 0
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": -10
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": -10
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": 45
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": -20
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": -10
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": -10
+            },
+            {
+              "manager": "Garrett",
+              "amount": 10
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": -10
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": 25
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": -10
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": 70
+            },
+            {
+              "manager": "Ryan Artega",
+              "amount": -10
+            }
+          ]
+        },
+        {
+          "label": "Week 10",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": 45
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": -10
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": -10
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": -10
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": -10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": -10
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": -10
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": -10
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": 25
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": -10
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": 10
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": -10
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": -10
+            },
+            {
+              "manager": "Garrett",
+              "amount": 70
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": -10
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": -10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": -10
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": 0
+            },
+            {
+              "manager": "Ryan Artega",
+              "amount": -10
+            }
+          ]
+        },
+        {
+          "label": "Week 11",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": -10
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": -10
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": -10
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": -10
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": 10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": -10
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": 25
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": 70
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": -10
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": -10
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": -10
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": 45
+            },
+            {
+              "manager": "Garrett",
+              "amount": 0
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": -10
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": -10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": -10
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": -10
+            },
+            {
+              "manager": "Ryan Artega",
+              "amount": -10
+            }
+          ]
+        },
+        {
+          "label": "Thanksgiving",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": 25
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": -10
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": -10
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": -10
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": -10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": -10
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": -10
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": -10
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": 70
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": 0
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": -10
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": 45
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": -10
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": -10
+            },
+            {
+              "manager": "Garrett",
+              "amount": -10
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": -10
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": -10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": 10
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": -10
+            },
+            {
+              "manager": "Ryan Artega",
+              "amount": -10
+            }
+          ]
+        },
+        {
+          "label": "Week 12",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": 25
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": 10
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": -10
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": 45
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": 0
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": -10
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": 70
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": -10
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": -10
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": -10
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": -10
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": -10
+            },
+            {
+              "manager": "Garrett",
+              "amount": -10
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": -10
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": -10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": -10
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": -20
+            },
+            {
+              "manager": "Ryan Artega",
+              "amount": -10
+            }
+          ]
+        },
+        {
+          "label": "Week 13",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": 0
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": -10
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": -10
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": 25
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": 10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": -10
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": -10
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": -10
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": -10
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": -10
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": 45
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": -10
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": -10
+            },
+            {
+              "manager": "Garrett",
+              "amount": -10
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": -10
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": -10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": 70
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": -10
+            },
+            {
+              "manager": "Ryan Artega",
+              "amount": -10
+            }
+          ]
+        },
+        {
+          "label": "Week 14",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": 25
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": -10
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": 45
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": -10
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": -20
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": -10
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": -10
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": 70
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": 0
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": -10
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": -10
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": -10
+            },
+            {
+              "manager": "Garrett",
+              "amount": 10
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": -10
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": -10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": -10
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": -10
+            },
+            {
+              "manager": "Ryan Artega",
+              "amount": -10
+            }
+          ]
+        },
+        {
+          "label": "Week 15",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": -10
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": -10
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": -10
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": -10
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": -10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": -10
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": -10
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": 0
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": 70
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": 25
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": 45
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": -10
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": -10
+            },
+            {
+              "manager": "Garrett",
+              "amount": -10
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": -10
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": 10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": -10
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": -10
+            },
+            {
+              "manager": "Ryan Artega",
+              "amount": -10
+            }
+          ]
+        },
+        {
+          "label": "Week 16",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": -10
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": 0
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": -10
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": 45
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": -10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": -10
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": -10
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": -10
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": 25
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": -10
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": -20
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": -10
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": -20
+            },
+            {
+              "manager": "Garrett",
+              "amount": -10
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": -10
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": 70
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": 10
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": -10
+            },
+            {
+              "manager": "Ryan Artega",
+              "amount": -20
+            }
+          ]
+        },
+        {
+          "label": "Week 17",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": 70
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": -10
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": 45
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": 10
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": -10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": -10
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": -10
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": 25
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": -10
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": -10
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": -10
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": 0
+            },
+            {
+              "manager": "Garrett",
+              "amount": -10
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": -10
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": -10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": -10
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": -10
+            },
+            {
+              "manager": "Ryan Artega",
+              "amount": -10
+            }
+          ]
+        },
+        {
+          "label": "Week 18",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": -10
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": -10
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": 45
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": -10
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": 25
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": -10
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": -10
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": -10
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": -10
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": -10
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": -10
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": 0
+            },
+            {
+              "manager": "Garrett",
+              "amount": -10
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": -10
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": -10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": 70
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": -10
+            },
+            {
+              "manager": "Ryan Artega",
+              "amount": 10
+            }
+          ]
+        },
+        {
+          "label": "Wildcard",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": 25
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": 45
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": -10
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": 10
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": -10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": -20
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": -10
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": -10
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": -20
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": -10
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": 0
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": -10
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": -10
+            },
+            {
+              "manager": "Garrett",
+              "amount": 70
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": -10
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": -10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": -10
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": -20
+            },
+            {
+              "manager": "Ryan Artega",
+              "amount": -10
+            }
+          ]
+        },
+        {
+          "label": "Div Round",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": 10
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": -10
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": 45
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": -10
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": 0
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": -10
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": -10
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": -10
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": -10
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": -10
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": -10
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": -10
+            },
+            {
+              "manager": "Garrett",
+              "amount": -10
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": 70
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": -20
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": 25
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": -10
+            },
+            {
+              "manager": "Ryan Artega",
+              "amount": -10
+            }
+          ]
+        },
+        {
+          "label": "Conf Champ",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": -10
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": -10
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": -10
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": -10
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": 10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": -10
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": -10
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": -10
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": 70
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": -10
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": -10
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": 45
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": -10
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": -10
+            },
+            {
+              "manager": "Garrett",
+              "amount": 25
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": -10
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": -10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": 0
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": -10
+            },
+            {
+              "manager": "Ryan Artega",
+              "amount": -10
+            }
+          ]
+        },
+        {
+          "label": "SUPERBOWL",
+          "results": [
+            {
+              "manager": "Mike Strang",
+              "amount": -10
+            },
+            {
+              "manager": "Brad Windsor",
+              "amount": -10
+            },
+            {
+              "manager": "Kam Jarog",
+              "amount": -10
+            },
+            {
+              "manager": "Bryan Sirt",
+              "amount": 57.5
+            },
+            {
+              "manager": "Fez Damulira",
+              "amount": -10
+            },
+            {
+              "manager": "Mitch Whittington",
+              "amount": -10
+            },
+            {
+              "manager": "Ray Latourette",
+              "amount": -10
+            },
+            {
+              "manager": "Chris Zaccagnini",
+              "amount": -10
+            },
+            {
+              "manager": "Parker McCoy",
+              "amount": -10
+            },
+            {
+              "manager": "Rigo Sanchez",
+              "amount": -10
+            },
+            {
+              "manager": "Alex Murphy",
+              "amount": 0
+            },
+            {
+              "manager": "Mario Meccia",
+              "amount": -10
+            },
+            {
+              "manager": "Jake Allen",
+              "amount": 25
+            },
+            {
+              "manager": "TJ Staples",
+              "amount": -10
+            },
+            {
+              "manager": "Garrett",
+              "amount": 57.5
+            },
+            {
+              "manager": "Robbie Tonge",
+              "amount": -10
+            },
+            {
+              "manager": "Braiton Holloway",
+              "amount": -10
+            },
+            {
+              "manager": "Kyle Chirico",
+              "amount": -10
+            },
+            {
+              "manager": "Conner Gesbocker",
+              "amount": -10
+            },
+            {
+              "manager": "Ryan Artega",
+              "amount": 10
+            }
+          ]
         }
       ]
     }

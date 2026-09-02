@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MurphDuel weekly Fanduel winners, losers, and money owed.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Weekly Money | MurphDuel">
+  <meta property="og:description" content="Weekly Fanduel winners, losers, and money owed by season.">
+  <meta property="og:url" content="https://www.murphduel.com/season.html">
+  <meta property="og:image" content="https://www.murphduel.com/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Weekly Money | MurphDuel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/season.js" type="module"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="MurphDuel standings">
+      <span class="brand-mark" aria-hidden="true">MD</span>
+      <span>
+        <strong>MurphDuel</strong>
+        <small>Fantasy football standings</small>
+      </span>
+    </a>
+    <div class="header-actions">
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="index.html">Standings</a>
+        <a href="season.html" aria-current="page">Weekly money</a>
+      </nav>
+      <p class="data-status" id="weeklyDataStatus" role="status">Loading weekly results…</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="weekly-hero">
+      <div>
+        <p class="eyebrow">The weekly ledger</p>
+        <h1>Winners.<br><span>Losers.</span><br>Money.</h1>
+        <p class="hero-text">See who cashed, who owes, and how the money moved every week of the season.</p>
+      </div>
+      <div class="season-switcher" aria-label="Choose a season">
+        <p>Season</p>
+        <div class="year-buttons" id="weeklyYearButtons"></div>
+      </div>
+    </section>
+
+    <section class="weekly-section" aria-labelledby="weeklyTitle">
+      <div class="section-heading weekly-heading">
+        <div>
+          <p class="eyebrow">Weekly breakdown</p>
+          <h2 id="weeklyTitle">Weekly money</h2>
+        </div>
+        <label class="week-picker">
+          <span>Choose a week</span>
+          <select id="weekSelect"></select>
+        </label>
+      </div>
+
+      <div class="week-summary">
+        <article class="summary-list-card winners-card">
+          <p class="summary-label">Winners</p>
+          <ul id="weekWinners"></ul>
+        </article>
+        <article class="summary-list-card losers-card">
+          <p class="summary-label">Owing</p>
+          <ul id="weekLosers"></ul>
+        </article>
+        <article class="summary-number-card">
+          <p class="summary-label">Paid out</p>
+          <strong id="weekPaid">—</strong>
+        </article>
+        <article class="summary-number-card">
+          <p class="summary-label">Money owed</p>
+          <strong id="weekOwed">—</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="ledger-section" aria-labelledby="ledgerTitle">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Full season</p>
+          <h2 id="ledgerTitle">Money by week</h2>
+        </div>
+        <p class="season-description">Positive amounts are winnings. Red amounts are money owed.</p>
+      </div>
+      <div class="table-shell ledger-shell">
+        <table class="ledger-table" id="ledgerTable"></table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span class="brand-mark" aria-hidden="true">MD</span>
+    <p>MurphDuel Fantasy Football</p>
+    <p>Made for the MurphDuel crew.</p>
+  </footer>
+</body>
+</html>

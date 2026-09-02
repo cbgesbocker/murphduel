@@ -28,6 +28,7 @@ Source: `cbgesbocker/murphduel`, branch `main`
 site/                       Static website deployed to S3
   config.json               Optional published spreadsheet CSV URL
   leaderboard.json          Checked-in fallback data
+  season.html               Weekly winners, losers, and money ledger
 infrastructure/
   template.yml              S3, CloudFront, ACM, Route 53, CodeBuild, CodePipeline
   buildspec.yml             Static-site publish and CloudFront invalidation

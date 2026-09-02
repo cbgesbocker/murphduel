@@ -4,9 +4,11 @@ import { normalizeData, parseCsv } from "../site/js/data.js";
 
 const requiredFiles = [
   "site/index.html",
+  "site/season.html",
   "site/css/style.css",
   "site/js/app.js",
   "site/js/data.js",
+  "site/js/season.js",
   "site/config.json",
   "site/leaderboard.json",
   "site/og.png",
@@ -35,6 +37,19 @@ for (const season of data.seasons) {
       throw new Error(`Invalid leaderboard entry in ${season.year}`);
     }
   }
+  if (!Array.isArray(season.weeks) || season.weeks.length === 0) {
+    throw new Error(`Season ${season.year} needs weekly payout data`);
+  }
+  for (const week of season.weeks) {
+    if (!week.label || !Array.isArray(week.results) || week.results.length === 0) {
+      throw new Error(`Invalid weekly payout data in ${season.year}`);
+    }
+    for (const result of week.results) {
+      if (!result.manager || !Number.isFinite(result.amount)) {
+        throw new Error(`Invalid payout entry for ${week.label} in ${season.year}`);
+      }
+    }
+  }
 }
 
 const appSource = await readFile("site/js/app.js", "utf8");
@@ -43,6 +58,11 @@ assert.match(appSource, /from "\.\/data\.js"/);
 const html = await readFile("site/index.html", "utf8");
 assert.match(html, /<meta property="og:image" content="https:\/\/www\.murphduel\.com\/og\.png">/);
 assert.match(html, /<meta name="twitter:card" content="summary_large_image">/);
+assert.match(html, /href="season\.html"/);
+
+const seasonHtml = await readFile("site/season.html", "utf8");
+assert.match(seasonHtml, /id="weekSelect"/);
+assert.match(seasonHtml, /id="ledgerTable"/);
 
 const normalized = normalizeData(data);
 const expectedYears = data.seasons.map(({ year }) => year).sort((left, right) => right - left);
@@ -63,4 +83,7 @@ assert.deepEqual(parsed.seasons.map(({ year }) => year), [2025, 2024]);
 assert.equal(parsed.seasons[0].leaderboard[0].manager, "Jordan");
 assert.equal(parsed.seasons[1].leaderboard[0].manager, "Murphy, Pat");
 
-console.log(`Validated ${requiredFiles.length} files and ${data.seasons.length} seasons.`);
+console.log(
+  `Validated ${requiredFiles.length} files, ${data.seasons.length} seasons, and `
+  + `${data.seasons.reduce((total, season) => total + season.weeks.length, 0)} weekly ledgers.`
+);
