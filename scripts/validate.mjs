@@ -11,6 +11,7 @@ const requiredFiles = [
   "site/js/season.js",
   "site/config.json",
   "site/leaderboard.json",
+  "site/favicon.svg",
   "site/og.png",
   "infrastructure/buildspec.yml",
   "infrastructure/template.yml"
@@ -58,11 +59,13 @@ assert.match(appSource, /from "\.\/data\.js"/);
 const html = await readFile("site/index.html", "utf8");
 assert.match(html, /<meta property="og:image" content="https:\/\/www\.murphduel\.com\/og\.png">/);
 assert.match(html, /<meta name="twitter:card" content="summary_large_image">/);
+assert.match(html, /<link rel="icon" href="favicon\.svg" type="image\/svg\+xml">/);
 assert.match(html, /href="season\.html"/);
 
 const seasonHtml = await readFile("site/season.html", "utf8");
 assert.match(seasonHtml, /id="weekSelect"/);
 assert.match(seasonHtml, /id="ledgerTable"/);
+assert.match(seasonHtml, /<link rel="icon" href="favicon\.svg" type="image\/svg\+xml">/);
 
 const normalized = normalizeData(data);
 const expectedYears = data.seasons.map(({ year }) => year).sort((left, right) => right - left);
