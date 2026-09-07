@@ -82,7 +82,7 @@ assert.match(seasonHtml, /href="rules\.html"/);
 
 const dictatorHtml = await readFile("site/dictator.html", "utf8");
 assert.match(dictatorHtml, /<h1 id="dictatorTitle">The<br><span>Dictator\.<\/span><\/h1>/);
-assert.match(dictatorHtml, /<p class="dictator-name">Mike<\/p>/);
+assert.match(dictatorHtml, /<p class="dictator-name">Dictator Strang<\/p>/);
 assert.match(dictatorHtml, /src="images\/commissioner\.jpeg"/);
 assert.match(dictatorHtml, /href="dictator\.html" aria-current="page"/);
 assert.match(dictatorHtml, /href="rules\.html"/);
