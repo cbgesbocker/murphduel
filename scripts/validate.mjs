@@ -117,9 +117,9 @@ assert.match(rulesHtml, /href="flakes\.html"/);
 const flakesHtml = await readFile("site/flakes.html", "utf8");
 assert.match(flakesHtml, /<h1 id="flakesTitle">League<br><span>Flakes\.<\/span><\/h1>/);
 assert.match(flakesHtml, /src="images\/operative-kenneth\.png"/);
-assert.match(flakesHtml, /<h2>Operative Kenneth<\/h2>/);
+assert.match(flakesHtml, /<h2 lang="ko">가나다라마바사<\/h2>/);
 assert.match(flakesHtml, /src="images\/sargeant-chirico\.png"/);
-assert.match(flakesHtml, /<h2>Sargeant Chirico<\/h2>/);
+assert.match(flakesHtml, /<h2>Father Chirico<\/h2>/);
 assert.match(flakesHtml, /href="flakes\.html" aria-current="page"/);
 
 const normalized = normalizeData(data);
