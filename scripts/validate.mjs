@@ -9,6 +9,7 @@ const requiredFiles = [
   "site/standings.html",
   "site/dictator.html",
   "site/rules.html",
+  "site/flakes.html",
   "site/css/style.css",
   "site/js/app.js",
   "site/js/data.js",
@@ -18,6 +19,8 @@ const requiredFiles = [
   "site/leaderboard.json",
   "site/favicon.svg",
   "site/images/commissioner.jpeg",
+  "site/images/operative-kenneth.png",
+  "site/images/sargeant-chirico.png",
   "site/og.png",
   "infrastructure/buildspec.yml",
   "infrastructure/template.yml"
@@ -76,6 +79,7 @@ assert.match(html, /href="index\.html" aria-current="page">Weekly money/);
 assert.match(html, /href="standings\.html">Standings/);
 assert.match(html, /href="dictator\.html"/);
 assert.match(html, /href="rules\.html"/);
+assert.match(html, /href="flakes\.html"/);
 
 const seasonHtml = await readFile("site/season.html", "utf8");
 assert.match(seasonHtml, /id="weekSelect"/);
@@ -83,12 +87,14 @@ assert.match(seasonHtml, /id="ledgerTable"/);
 assert.match(seasonHtml, /<link rel="icon" href="favicon\.svg" type="image\/svg\+xml">/);
 assert.match(seasonHtml, /href="dictator\.html"/);
 assert.match(seasonHtml, /href="rules\.html"/);
+assert.match(seasonHtml, /href="flakes\.html"/);
 
 const standingsHtml = await readFile("site/standings.html", "utf8");
 assert.match(standingsHtml, /id="leaderboardBody"/);
 assert.match(standingsHtml, /src="js\/app\.js"/);
 assert.match(standingsHtml, /href="standings\.html" aria-current="page">Standings/);
 assert.match(standingsHtml, /href="index\.html">Weekly money/);
+assert.match(standingsHtml, /href="flakes\.html"/);
 
 const dictatorHtml = await readFile("site/dictator.html", "utf8");
 assert.match(dictatorHtml, /<h1 id="dictatorTitle">The<br><span>Dictator\.<\/span><\/h1>/);
@@ -96,6 +102,7 @@ assert.match(dictatorHtml, /<p class="dictator-name">Dictator Strang<\/p>/);
 assert.match(dictatorHtml, /src="images\/commissioner\.jpeg"/);
 assert.match(dictatorHtml, /href="dictator\.html" aria-current="page"/);
 assert.match(dictatorHtml, /href="rules\.html"/);
+assert.match(dictatorHtml, /href="flakes\.html"/);
 
 const rulesHtml = await readFile("site/rules.html", "utf8");
 assert.match(rulesHtml, /<h1 id="rulesTitle">The<br><span>Rules\.<\/span><\/h1>/);
@@ -105,6 +112,15 @@ assert.match(rulesHtml, /<h2>Bonus Pot<\/h2>/);
 assert.match(rulesHtml, /<h2>No Lineup Fine<\/h2>/);
 assert.match(rulesHtml, /Thanksgiving week has two contests/);
 assert.match(rulesHtml, /href="rules\.html" aria-current="page"/);
+assert.match(rulesHtml, /href="flakes\.html"/);
+
+const flakesHtml = await readFile("site/flakes.html", "utf8");
+assert.match(flakesHtml, /<h1 id="flakesTitle">League<br><span>Flakes\.<\/span><\/h1>/);
+assert.match(flakesHtml, /src="images\/operative-kenneth\.png"/);
+assert.match(flakesHtml, /<h2>Operative Kenneth<\/h2>/);
+assert.match(flakesHtml, /src="images\/sargeant-chirico\.png"/);
+assert.match(flakesHtml, /<h2>Sargeant Chirico<\/h2>/);
+assert.match(flakesHtml, /href="flakes\.html" aria-current="page"/);
 
 const normalized = normalizeData(data);
 const expectedYears = data.seasons.map(({ year }) => year).sort((left, right) => right - left);

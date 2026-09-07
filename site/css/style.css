@@ -97,6 +97,7 @@ main { overflow: hidden; }
 .weekly-hero,
 .dictator-hero,
 .rules-intro,
+.flakes-intro,
 .leaderboard-section,
 .stats-section,
 .hall-of-fame,
@@ -209,6 +210,59 @@ main { overflow: hidden; }
 }
 
 .rules-intro h1 { margin-bottom: 0; }
+
+.flakes-intro {
+  margin-top: 2rem;
+  padding: clamp(3rem, 7vw, 5.5rem) clamp(1.5rem, 5vw, 4rem);
+  border-left: 7px solid var(--red);
+  background:
+    linear-gradient(110deg, rgba(204, 0, 0, 0.35), transparent 50%),
+    repeating-linear-gradient(135deg, transparent 0 42px, rgba(255, 255, 255, 0.025) 42px 44px),
+    var(--black-light);
+  box-shadow: 0 18px 0 #111;
+}
+
+.flakes-intro h1 { margin-bottom: 0; }
+
+.flakes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  width: min(1180px, calc(100% - 4rem));
+  margin-inline: auto;
+  padding: 4.5rem 0 3.5rem;
+}
+
+.flake-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-top: 5px solid var(--red);
+  background: var(--black-light);
+}
+
+.flake-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.flake-card-copy {
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+  border-top: 1px solid var(--line);
+}
+
+.flake-rank {
+  margin-bottom: 0.65rem;
+  color: #ff4354;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.flake-card h2 { font-size: clamp(2rem, 4vw, 3.25rem); }
 
 .rules-section {
   display: grid;
@@ -575,7 +629,7 @@ footer p:last-child { margin-left: auto; }
   .header-actions { align-items: stretch; flex-direction: column; gap: 0.5rem; }
   .site-nav { justify-content: flex-start; }
   .site-nav a { padding: 0.45rem 0.55rem; }
-  .hero, .weekly-hero, .dictator-hero, .rules-intro, .rules-section, .leaderboard-section, .stats-section, .hall-of-fame, .weekly-section, .ledger-section { width: min(100% - 2rem, 1180px); }
+  .hero, .weekly-hero, .dictator-hero, .rules-intro, .flakes-intro, .flakes-grid, .rules-section, .leaderboard-section, .stats-section, .hall-of-fame, .weekly-section, .ledger-section { width: min(100% - 2rem, 1180px); }
   .hero { grid-template-columns: 1fr; gap: 2rem; padding-top: 4rem; }
   .weekly-hero { grid-template-columns: 1fr; gap: 2rem; padding-top: 3.5rem; }
   .dictator-hero { grid-template-columns: 1fr; }
@@ -583,6 +637,7 @@ footer p:last-child { margin-left: auto; }
   .dictator-portrait { border-top: 1px solid var(--line); border-left: 0; }
   .dictator-portrait img { height: auto; }
   .rule-card { grid-template-columns: 1fr; gap: 1rem; }
+  .flakes-grid { grid-template-columns: 1fr; }
   .rule-number { font-size: 2.5rem; }
   .season-switcher { min-width: 0; }
   .section-heading { display: block; }
