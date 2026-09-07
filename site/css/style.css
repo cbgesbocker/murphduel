@@ -243,7 +243,7 @@ main { overflow: hidden; }
 .flake-card img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: min(32vw, 22rem);
   object-fit: cover;
   object-position: center 28%;
 }
@@ -640,6 +640,7 @@ footer p:last-child { margin-left: auto; }
   .dictator-portrait img { height: auto; }
   .rule-card { grid-template-columns: 1fr; gap: 1rem; }
   .flakes-grid { grid-template-columns: 1fr; }
+  .flake-card img { height: min(65vw, 25rem); }
   .rule-number { font-size: 2.5rem; }
   .season-switcher { min-width: 0; }
   .section-heading { display: block; }
