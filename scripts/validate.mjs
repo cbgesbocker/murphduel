@@ -117,6 +117,7 @@ assert.match(rulesHtml, /href="flakes\.html"/);
 const flakesHtml = await readFile("site/flakes.html", "utf8");
 assert.match(flakesHtml, /<h1 id="flakesTitle">League<br><span>Flakes\.<\/span><\/h1>/);
 assert.match(flakesHtml, /src="images\/operative-kenneth\.png"/);
+assert.match(flakesHtml, /<p class="flake-rank" lang="ko">요원<\/p>/);
 assert.match(flakesHtml, /<h2 lang="ko">케니 조<\/h2>/);
 assert.match(flakesHtml, /src="images\/sargeant-chirico\.png"/);
 assert.match(flakesHtml, /<h2>Father Chirico<\/h2>/);
