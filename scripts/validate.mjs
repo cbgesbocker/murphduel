@@ -6,6 +6,7 @@ import { parseSeasonRows } from "../site/js/live-data.js";
 const requiredFiles = [
   "site/index.html",
   "site/season.html",
+  "site/standings.html",
   "site/dictator.html",
   "site/rules.html",
   "site/css/style.css",
@@ -69,7 +70,10 @@ const html = await readFile("site/index.html", "utf8");
 assert.match(html, /<meta property="og:image" content="https:\/\/www\.murphduel\.com\/og\.png">/);
 assert.match(html, /<meta name="twitter:card" content="summary_large_image">/);
 assert.match(html, /<link rel="icon" href="favicon\.svg" type="image\/svg\+xml">/);
-assert.match(html, /href="season\.html"/);
+assert.match(html, /id="weekSelect"/);
+assert.match(html, /id="ledgerTable"/);
+assert.match(html, /href="index\.html" aria-current="page">Weekly money/);
+assert.match(html, /href="standings\.html">Standings/);
 assert.match(html, /href="dictator\.html"/);
 assert.match(html, /href="rules\.html"/);
 
@@ -79,6 +83,12 @@ assert.match(seasonHtml, /id="ledgerTable"/);
 assert.match(seasonHtml, /<link rel="icon" href="favicon\.svg" type="image\/svg\+xml">/);
 assert.match(seasonHtml, /href="dictator\.html"/);
 assert.match(seasonHtml, /href="rules\.html"/);
+
+const standingsHtml = await readFile("site/standings.html", "utf8");
+assert.match(standingsHtml, /id="leaderboardBody"/);
+assert.match(standingsHtml, /src="js\/app\.js"/);
+assert.match(standingsHtml, /href="standings\.html" aria-current="page">Standings/);
+assert.match(standingsHtml, /href="index\.html">Weekly money/);
 
 const dictatorHtml = await readFile("site/dictator.html", "utf8");
 assert.match(dictatorHtml, /<h1 id="dictatorTitle">The<br><span>Dictator\.<\/span><\/h1>/);
