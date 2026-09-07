@@ -7,6 +7,7 @@ const requiredFiles = [
   "site/index.html",
   "site/season.html",
   "site/dictator.html",
+  "site/rules.html",
   "site/css/style.css",
   "site/js/app.js",
   "site/js/data.js",
@@ -70,18 +71,29 @@ assert.match(html, /<meta name="twitter:card" content="summary_large_image">/);
 assert.match(html, /<link rel="icon" href="favicon\.svg" type="image\/svg\+xml">/);
 assert.match(html, /href="season\.html"/);
 assert.match(html, /href="dictator\.html"/);
+assert.match(html, /href="rules\.html"/);
 
 const seasonHtml = await readFile("site/season.html", "utf8");
 assert.match(seasonHtml, /id="weekSelect"/);
 assert.match(seasonHtml, /id="ledgerTable"/);
 assert.match(seasonHtml, /<link rel="icon" href="favicon\.svg" type="image\/svg\+xml">/);
 assert.match(seasonHtml, /href="dictator\.html"/);
+assert.match(seasonHtml, /href="rules\.html"/);
 
 const dictatorHtml = await readFile("site/dictator.html", "utf8");
 assert.match(dictatorHtml, /<h1 id="dictatorTitle">The<br><span>Dictator\.<\/span><\/h1>/);
 assert.match(dictatorHtml, /<p class="dictator-name">Mike<\/p>/);
 assert.match(dictatorHtml, /src="images\/commissioner\.jpeg"/);
 assert.match(dictatorHtml, /href="dictator\.html" aria-current="page"/);
+assert.match(dictatorHtml, /href="rules\.html"/);
+
+const rulesHtml = await readFile("site/rules.html", "utf8");
+assert.match(rulesHtml, /<h1 id="rulesTitle">The<br><span>Rules\.<\/span><\/h1>/);
+assert.match(rulesHtml, /<h2>Set Your Lineup<\/h2>/);
+assert.match(rulesHtml, /<h2>Weekly Payment<\/h2>/);
+assert.match(rulesHtml, /<h2>Bonus Pot<\/h2>/);
+assert.match(rulesHtml, /<h2>No Lineup Fine<\/h2>/);
+assert.match(rulesHtml, /href="rules\.html" aria-current="page"/);
 
 const normalized = normalizeData(data);
 const expectedYears = data.seasons.map(({ year }) => year).sort((left, right) => right - left);

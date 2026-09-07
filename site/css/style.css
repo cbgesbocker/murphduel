@@ -77,7 +77,7 @@ button, a { font: inherit; }
   gap: 1.5rem;
 }
 
-.site-nav { display: flex; gap: 0.3rem; }
+.site-nav { display: flex; flex-wrap: wrap; gap: 0.3rem; }
 
 .site-nav a {
   padding: 0.55rem 0.75rem;
@@ -96,6 +96,7 @@ main { overflow: hidden; }
 .hero,
 .weekly-hero,
 .dictator-hero,
+.rules-intro,
 .leaderboard-section,
 .stats-section,
 .hall-of-fame,
@@ -194,6 +195,68 @@ main { overflow: hidden; }
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+}
+
+.rules-intro {
+  margin-top: 2rem;
+  padding: clamp(3rem, 7vw, 5.5rem) clamp(1.5rem, 5vw, 4rem);
+  border-left: 7px solid var(--red);
+  background:
+    linear-gradient(110deg, rgba(204, 0, 0, 0.35), transparent 50%),
+    repeating-linear-gradient(135deg, transparent 0 42px, rgba(255, 255, 255, 0.025) 42px 44px),
+    var(--black-light);
+  box-shadow: 0 18px 0 #111;
+}
+
+.rules-intro h1 { margin-bottom: 0; }
+
+.rules-section {
+  display: grid;
+  gap: 1rem;
+  width: min(1180px, calc(100% - 4rem));
+  margin-inline: auto;
+  padding: 4.5rem 0 3.5rem;
+}
+
+.rule-card {
+  display: grid;
+  grid-template-columns: 6rem minmax(0, 1fr);
+  gap: 1.5rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--red);
+  background: var(--black-light);
+}
+
+.rule-number {
+  color: #ff4354;
+  font: 700 3.5rem/1 var(--display);
+  letter-spacing: -0.04em;
+}
+
+.rule-card h2 { font-size: clamp(2rem, 4vw, 3rem); }
+
+.rule-card ul {
+  display: grid;
+  gap: 0.85rem;
+  margin: 1.5rem 0 0;
+  padding-left: 1.25rem;
+  color: #dddddd;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.rule-card li::marker { color: var(--yellow); }
+
+.rule-warning {
+  margin: 1.5rem 0 0;
+  padding: 1rem 1.1rem;
+  border-left: 4px solid var(--yellow);
+  color: var(--paper);
+  background: rgba(246, 169, 23, 0.1);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.6;
 }
 
 .weekly-hero h1 { font-size: clamp(3.8rem, 8vw, 7rem); }
@@ -507,17 +570,20 @@ footer p { margin: 0; }
 footer p:last-child { margin-left: auto; }
 
 @media (max-width: 780px) {
-  .site-header { align-items: flex-start; padding: 1rem; }
+  .site-header { align-items: stretch; flex-direction: column; gap: 1rem; padding: 1rem; }
   .brand small { display: none; }
-  .header-actions { align-items: flex-end; flex-direction: column; gap: 0.5rem; }
+  .header-actions { align-items: stretch; flex-direction: column; gap: 0.5rem; }
+  .site-nav { justify-content: flex-start; }
   .site-nav a { padding: 0.45rem 0.55rem; }
-  .hero, .weekly-hero, .dictator-hero, .leaderboard-section, .stats-section, .hall-of-fame, .weekly-section, .ledger-section { width: min(100% - 2rem, 1180px); }
+  .hero, .weekly-hero, .dictator-hero, .rules-intro, .rules-section, .leaderboard-section, .stats-section, .hall-of-fame, .weekly-section, .ledger-section { width: min(100% - 2rem, 1180px); }
   .hero { grid-template-columns: 1fr; gap: 2rem; padding-top: 4rem; }
   .weekly-hero { grid-template-columns: 1fr; gap: 2rem; padding-top: 3.5rem; }
   .dictator-hero { grid-template-columns: 1fr; }
   .dictator-copy { min-height: 24rem; }
   .dictator-portrait { border-top: 1px solid var(--line); border-left: 0; }
   .dictator-portrait img { height: auto; }
+  .rule-card { grid-template-columns: 1fr; gap: 1rem; }
+  .rule-number { font-size: 2.5rem; }
   .season-switcher { min-width: 0; }
   .section-heading { display: block; }
   .week-picker { margin-top: 1.25rem; }
