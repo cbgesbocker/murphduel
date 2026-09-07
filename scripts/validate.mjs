@@ -93,6 +93,7 @@ assert.match(rulesHtml, /<h2>Set Your Lineup<\/h2>/);
 assert.match(rulesHtml, /<h2>Weekly Payment<\/h2>/);
 assert.match(rulesHtml, /<h2>Bonus Pot<\/h2>/);
 assert.match(rulesHtml, /<h2>No Lineup Fine<\/h2>/);
+assert.match(rulesHtml, /Thanksgiving week has two contests/);
 assert.match(rulesHtml, /href="rules\.html" aria-current="page"/);
 
 const normalized = normalizeData(data);
