@@ -243,10 +243,12 @@ main { overflow: hidden; }
 .flake-card img {
   display: block;
   width: 100%;
-  aspect-ratio: 2 / 3;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 28%;
 }
+
+.flake-card:nth-child(2) img { object-position: center 24%; }
 
 .flake-card-copy {
   padding: clamp(1.5rem, 4vw, 2.25rem);
