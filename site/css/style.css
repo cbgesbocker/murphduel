@@ -71,6 +71,27 @@ button, a { font: inherit; }
 
 .data-status { margin: 0; font-size: 0.82rem; }
 
+.data-tools {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sync-button {
+  min-height: 2.35rem;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid var(--red);
+  color: var(--paper);
+  background: var(--red);
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.sync-button:hover,
+.sync-button:focus-visible { background: var(--red-dark); }
+.sync-button:disabled { cursor: wait; opacity: 0.65; }
+
 .header-actions {
   display: flex;
   align-items: center;
@@ -609,6 +630,11 @@ h2 {
 .money-negative { color: #ff6673; }
 .money-zero { color: #777; }
 .ledger-net { font-weight: 800; }
+.ledger-table td.empty-ledger {
+  padding: 2rem;
+  color: var(--muted);
+  text-align: center;
+}
 
 footer {
   display: flex;
@@ -629,6 +655,7 @@ footer p:last-child { margin-left: auto; }
   .site-header { align-items: stretch; flex-direction: column; gap: 1rem; padding: 1rem; }
   .brand small { display: none; }
   .header-actions { align-items: stretch; flex-direction: column; gap: 0.5rem; }
+  .data-tools { justify-content: space-between; }
   .site-nav { justify-content: flex-start; }
   .site-nav a { padding: 0.45rem 0.55rem; }
   .hero, .weekly-hero, .dictator-hero, .rules-intro, .flakes-intro, .flakes-grid, .rules-section, .leaderboard-section, .stats-section, .hall-of-fame, .weekly-section, .ledger-section { width: min(100% - 2rem, 1180px); }

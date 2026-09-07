@@ -23,14 +23,14 @@ async function loadWeeklyData() {
   try {
     const { data, source } = await loadLeagueData();
     const seasons = (data.seasons ?? [])
-      .filter((season) => Array.isArray(season.weeks) && season.weeks.length)
+      .filter((season) => Array.isArray(season.weeks))
       .sort((left, right) => right.year - left.year);
-    if (!seasons.length) throw new Error("No weekly results were found");
+    if (!seasons.length) throw new Error("No seasons were found");
 
     renderSeasonButtons(seasons);
     const requestedYear = Number.parseInt(new URLSearchParams(location.search).get("year"), 10);
     selectSeason(seasons.find((season) => season.year === requestedYear) ?? seasons[0]);
-    elements.status.textContent = source === "live" ? "Live from the spreadsheet" : "Showing saved weekly results";
+    elements.status.textContent = source === "synced" ? "Synced from the spreadsheet" : "Showing saved weekly results";
   } catch (error) {
     console.error("Unable to load weekly results", error);
     elements.status.textContent = "Couldn’t load the weekly results";
@@ -65,6 +65,20 @@ function selectSeason(season) {
 
 function renderWeekPicker(season) {
   elements.weekSelect.replaceChildren();
+  if (!season.weeks.length) {
+    const option = document.createElement("option");
+    option.textContent = "No completed weeks";
+    elements.weekSelect.append(option);
+    elements.weekSelect.disabled = true;
+    renderMoneyList(elements.winners, [], "No payouts yet");
+    renderMoneyList(elements.losers, [], "Nobody owes yet");
+    elements.paid.textContent = money.format(0);
+    elements.owed.textContent = money.format(0);
+    renderLedger(season);
+    return;
+  }
+
+  elements.weekSelect.disabled = false;
   season.weeks.forEach((week, index) => {
     const option = document.createElement("option");
     option.value = index;
@@ -127,6 +141,16 @@ function renderLedger(season) {
     appendCell(row, formatSignedMoney(net), "td", `${moneyClass(net)} ledger-net`);
     body.append(row);
   });
+
+  if (!managers.length) {
+    const row = document.createElement("tr");
+    const cell = document.createElement("td");
+    cell.className = "empty-ledger";
+    cell.colSpan = season.weeks.length + 2;
+    cell.textContent = "No completed weekly results yet.";
+    row.append(cell);
+    body.append(row);
+  }
 
   elements.ledger.replaceChildren(head, body);
 }

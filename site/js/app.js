@@ -23,7 +23,7 @@ async function loadData() {
   try {
     const { data, source } = await loadLeagueData();
     render(normalizeData(data));
-    elements.status.textContent = source === "live" ? "Live from the spreadsheet" : "Showing saved standings";
+    elements.status.textContent = source === "synced" ? "Synced from the spreadsheet" : "Showing saved standings";
   } catch (error) {
     console.error("Unable to load standings", error);
     elements.status.textContent = "Couldn’t load the standings";

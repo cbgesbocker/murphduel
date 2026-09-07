@@ -1,5 +1,3 @@
 {
-  "googleSheetCsvUrl": "",
-  "googleSheetId": "1FHEReg8VuEJYJBs1_HCY27KvVLzsjl6uUQRsLMcezqY",
-  "googleSheetApiKey": ""
+  "syncEndpoint": ""
 }

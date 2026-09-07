@@ -5,12 +5,12 @@ View-only fantasy football standings at [www.murphduel.com](https://www.murphdue
 ## Architecture
 
 ```text
-GitHub main push
-      │
-      ▼
-CodePipeline ──► CodeBuild ──► private S3 site bucket
-                                      │
-                                      ▼
+GitHub main push ──► CodePipeline ──► CodeBuild ──► private S3 site bucket
+                                                        ▲
+Google Sheets ──► sync Lambda + Secrets Manager ─────────┘
+                         │
+                         └── Monday and Tuesday at 6 PM Mountain Time
+
 Route 53 ──► CloudFront + ACM ──► Origin Access Control
 
 murphduel-iam stack ──exports──► CodePipeline and CodeBuild role ARNs
@@ -39,6 +39,7 @@ scripts/
   sync-sheets.mjs           Imports final standings through the Google Sheets API
   validate.mjs              Source and data checks
   deploy-infrastructure.sh  Application stack deployment
+backend/sync/               Lambda and spreadsheet parsing code
 ```
 
 IAM is intentionally maintained in a separate `cbgesbocker/murphduel-iam` repository. Its singleton CloudFormation stack exports the two service-role ARNs consumed by this stack with `Fn::ImportValue`.
@@ -59,11 +60,13 @@ npm test
 
 ## Spreadsheet data
 
-The live site reads the public workbook `Copy of Fanduel 26'` directly on each visit. It asks the Google Sheets API for the workbook's actual tab list, reads every tab named like `Fanduel 26'`, and treats weekly payouts and final placement as independent sections. A newly added, correctly named season tab appears on the weekly-money page without a site deployment even when it has no final-placement table. It appears on the standings page once final standings are present. If Google is unavailable, the site falls back to the checked-in `site/leaderboard.json` data.
+The site reads `leaderboard.json` from the private S3 site bucket. A Lambda function refreshes that file from the public workbook `Copy of Fanduel 26'`. It discovers every tab named like `Fanduel 26'` and treats weekly payouts and final placement as independent sections. Empty future weeks and zero-point placeholder standings are ignored.
 
-The production `config.json` is preserved outside source control because it contains the browser-restricted Sheets API key. The key must remain limited to the Google Sheets API and the MurphDuel website referrers.
+The Google Sheets API key is stored in AWS Secrets Manager and is never included in the website or source repository. The Lambda runs automatically every Monday and Tuesday at 6:00 PM Mountain Time. A **Sync data** button on the weekly-money and standings pages can also request an immediate refresh; repeated public requests are limited to one sync per minute.
 
-The saved fallback can still be refreshed through the Google Sheets API without exposing the API key to visitors. The importer discovers every matching season tab and writes `site/leaderboard.json`.
+A correctly named season tab appears on the weekly-money page once it contains a completed weekly result. It appears on the standings page once positive final standings are present. If a sync fails, the last successful `leaderboard.json` remains available.
+
+The checked-in fallback can still be refreshed locally through the Google Sheets API. The importer discovers every matching season tab and writes `site/leaderboard.json`.
 
 Store the key in the ignored `.env` file, then refresh the saved standings:
 
@@ -71,7 +74,7 @@ Store the key in the ignored `.env` file, then refresh the saved standings:
 npm run sync-data
 ```
 
-The key must be restricted to the Google Sheets API and the `https://www.murphduel.com/*` referrer.
+The key must be restricted to the Google Sheets API. The deployment script copies it from `.env` into AWS Secrets Manager.
 
 ### Optional published CSV
 

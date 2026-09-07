@@ -1,8 +1,14 @@
 {
   "seasons": [
     {
+      "year": 2026,
+      "description": "Final standings are not available yet.",
+      "leaderboard": [],
+      "weeks": []
+    },
+    {
       "year": 2025,
-      "description": "Final Fanduel standings from the 2025 season.",
+      "description": "Fanduel standings from the 2025 season.",
       "leaderboard": [
         {
           "manager": "Garrett May",
@@ -1949,7 +1955,7 @@
     },
     {
       "year": 2024,
-      "description": "Final Fanduel standings from the 2024 season.",
+      "description": "Fanduel standings from the 2024 season.",
       "leaderboard": [
         {
           "manager": "Kam Jarog",

@@ -24,6 +24,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/app.js" type="module"></script>
+  <script src="js/sync.js" type="module"></script>
 </head>
 <body>
   <header class="site-header">
@@ -42,7 +43,10 @@
         <a href="dictator.html">Dictator</a>
         <a href="flakes.html">League Flakes</a>
       </nav>
-      <p class="data-status" id="dataStatus" role="status">Loading standings…</p>
+      <div class="data-tools">
+        <p class="data-status" id="dataStatus" data-sync-status role="status">Loading standings…</p>
+        <button class="sync-button" type="button" data-sync-button disabled>Sync data</button>
+      </div>
     </div>
   </header>
 

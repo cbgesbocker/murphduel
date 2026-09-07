@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
 import assert from "node:assert/strict";
 import { normalizeData, parseCsv } from "../site/js/data.js";
-import { parseSeasonRows } from "../site/js/live-data.js";
+import { parseSeasonRows } from "../backend/sync/parser.mjs";
 
 const requiredFiles = [
   "site/index.html",
@@ -15,6 +15,9 @@ const requiredFiles = [
   "site/js/data.js",
   "site/js/live-data.js",
   "site/js/season.js",
+  "site/js/sync.js",
+  "backend/sync/index.mjs",
+  "backend/sync/parser.mjs",
   "site/config.json",
   "site/leaderboard.json",
   "site/favicon.svg",
@@ -29,12 +32,8 @@ const requiredFiles = [
 await Promise.all(requiredFiles.map((path) => readFile(path)));
 
 const config = JSON.parse(await readFile("site/config.json", "utf8"));
-if (typeof config.googleSheetCsvUrl !== "string") {
-  throw new Error("site/config.json must contain a googleSheetCsvUrl string");
-}
-if (typeof config.googleSheetId !== "string" || typeof config.googleSheetApiKey !== "string") {
-  throw new Error("site/config.json must contain Google Sheet ID and API key strings");
-}
+if (typeof config.syncEndpoint !== "string") throw new Error("site/config.json must contain a syncEndpoint string");
+assert.equal("googleSheetApiKey" in config, false, "The browser config must never contain the Sheets API key");
 
 const data = JSON.parse(await readFile("site/leaderboard.json", "utf8"));
 if (!Array.isArray(data.seasons) || data.seasons.length === 0) {
@@ -42,17 +41,15 @@ if (!Array.isArray(data.seasons) || data.seasons.length === 0) {
 }
 
 for (const season of data.seasons) {
-  if (!Number.isInteger(season.year) || !Array.isArray(season.leaderboard) || season.leaderboard.length === 0) {
-    throw new Error("Each season needs an integer year and a non-empty leaderboard");
+  if (!Number.isInteger(season.year) || !Array.isArray(season.leaderboard)) {
+    throw new Error("Each season needs an integer year and a leaderboard array");
   }
   for (const entry of season.leaderboard) {
     if (!entry.manager || !Number.isFinite(entry.points)) {
       throw new Error(`Invalid leaderboard entry in ${season.year}`);
     }
   }
-  if (!Array.isArray(season.weeks) || season.weeks.length === 0) {
-    throw new Error(`Season ${season.year} needs weekly payout data`);
-  }
+  if (!Array.isArray(season.weeks)) throw new Error(`Season ${season.year} needs a weekly payout array`);
   for (const week of season.weeks) {
     if (!week.label || !Array.isArray(week.results) || week.results.length === 0) {
       throw new Error(`Invalid weekly payout data in ${season.year}`);
@@ -69,12 +66,22 @@ const appSource = await readFile("site/js/app.js", "utf8");
 assert.match(appSource, /from "\.\/data\.js"/);
 assert.match(appSource, /from "\.\/live-data\.js"/);
 
+const syncSource = await readFile("site/js/sync.js", "utf8");
+assert.match(syncSource, /fetch\(config\.syncEndpoint, \{ method: "POST" \}\)/);
+
+const templateSource = await readFile("infrastructure/template.yml", "utf8");
+assert.match(templateSource, /Type: AWS::Lambda::Function/);
+assert.match(templateSource, /SHEETS_SECRET_ARN/);
+assert.match(templateSource, /ScheduleExpressionTimezone: America\/Denver/);
+
 const html = await readFile("site/index.html", "utf8");
 assert.match(html, /<meta property="og:image" content="https:\/\/www\.murphduel\.com\/og\.png">/);
 assert.match(html, /<meta name="twitter:card" content="summary_large_image">/);
 assert.match(html, /<link rel="icon" href="favicon\.svg" type="image\/svg\+xml">/);
 assert.match(html, /id="weekSelect"/);
 assert.match(html, /id="ledgerTable"/);
+assert.match(html, /data-sync-button/);
+assert.match(html, /src="js\/sync\.js"/);
 assert.match(html, /href="index\.html" aria-current="page">Weekly money/);
 assert.match(html, /href="standings\.html">Standings/);
 assert.match(html, /href="dictator\.html"/);
@@ -84,6 +91,7 @@ assert.match(html, /href="flakes\.html"/);
 const seasonHtml = await readFile("site/season.html", "utf8");
 assert.match(seasonHtml, /id="weekSelect"/);
 assert.match(seasonHtml, /id="ledgerTable"/);
+assert.match(seasonHtml, /data-sync-button/);
 assert.match(seasonHtml, /<link rel="icon" href="favicon\.svg" type="image\/svg\+xml">/);
 assert.match(seasonHtml, /href="dictator\.html"/);
 assert.match(seasonHtml, /href="rules\.html"/);
@@ -92,6 +100,7 @@ assert.match(seasonHtml, /href="flakes\.html"/);
 const standingsHtml = await readFile("site/standings.html", "utf8");
 assert.match(standingsHtml, /id="leaderboardBody"/);
 assert.match(standingsHtml, /src="js\/app\.js"/);
+assert.match(standingsHtml, /data-sync-button/);
 assert.match(standingsHtml, /href="standings\.html" aria-current="page">Standings/);
 assert.match(standingsHtml, /href="index\.html">Weekly money/);
 assert.match(standingsHtml, /href="flakes\.html"/);
@@ -124,7 +133,10 @@ assert.match(flakesHtml, /<h2>Father Chirico<\/h2>/);
 assert.match(flakesHtml, /href="flakes\.html" aria-current="page"/);
 
 const normalized = normalizeData(data);
-const expectedYears = data.seasons.map(({ year }) => year).sort((left, right) => right - left);
+const expectedYears = data.seasons
+  .filter((season) => season.leaderboard.length)
+  .map(({ year }) => year)
+  .sort((left, right) => right - left);
 assert.deepEqual(normalized.seasons.map(({ year }) => year), expectedYears);
 assert.ok(normalized.seasons.every((season) => season.leaderboard.every((entry, index, entries) => (
   index === 0 || entries[index - 1].points >= entry.points
@@ -167,6 +179,16 @@ const weeklyOnlyRows = [
 const weeklyOnlySeason = parseSeasonRows("Fanduel 26'", weeklyOnlyRows);
 assert.equal(weeklyOnlySeason.leaderboard.length, 0);
 assert.equal(weeklyOnlySeason.weeks[0].results.length, 2);
+
+const futureSeason = parseSeasonRows("Fanduel 27'", [
+  ["PAYOUT"],
+  ["", "Week 1"],
+  ["Jordan", -10],
+  ["Alex", -10]
+]);
+assert.equal(futureSeason.year, 2027);
+assert.equal(futureSeason.leaderboard.length, 0);
+assert.equal(futureSeason.weeks.length, 0);
 
 console.log(
   `Validated ${requiredFiles.length} files, ${data.seasons.length} seasons, and `

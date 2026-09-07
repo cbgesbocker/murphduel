@@ -1,5 +1,5 @@
 import { readFile, writeFile } from "node:fs/promises";
-import { parseSeasonRows } from "../site/js/live-data.js";
+import { parseSeasonRows } from "../backend/sync/parser.mjs";
 
 const spreadsheetId = "1FHEReg8VuEJYJBs1_HCY27KvVLzsjl6uUQRsLMcezqY";
 const apiOrigin = "https://sheets.googleapis.com/v4/spreadsheets";

@@ -27,6 +27,19 @@ Parameters:
     Type: String
     Default: ''
     Description: Optional existing GitHub connection ARN. Leave blank to create one.
+  LambdaCodeBucket:
+    Type: String
+    Description: S3 bucket containing the packaged spreadsheet sync Lambda.
+  LambdaCodeKey:
+    Type: String
+    Description: S3 key containing the packaged spreadsheet sync Lambda.
+  SheetsApiKeySecretArn:
+    Type: String
+    Description: Secrets Manager ARN containing the Google Sheets API key.
+  SpreadsheetId:
+    Type: String
+    Default: 1FHEReg8VuEJYJBs1_HCY27KvVLzsjl6uUQRsLMcezqY
+    Description: Public Google spreadsheet used for MurphDuel results.
 
 Conditions:
   CreateConnection: !Equals [!Ref ConnectionArn, '']
@@ -198,6 +211,133 @@ Resources:
               Bool:
                 aws:SecureTransport: false
 
+  SyncFunctionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+        - PolicyName: MurphDuelSpreadsheetSync
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - s3:GetObject
+                  - s3:PutObject
+                Resource:
+                  - !Sub '${SiteBucket.Arn}/leaderboard.json'
+                  - !Sub '${SiteBucket.Arn}/sync-status.json'
+              - Effect: Allow
+                Action: s3:ListBucket
+                Resource: !GetAtt SiteBucket.Arn
+              - Effect: Allow
+                Action: secretsmanager:GetSecretValue
+                Resource: !Ref SheetsApiKeySecretArn
+              - Effect: Allow
+                Action: cloudfront:CreateInvalidation
+                Resource: !Sub 'arn:${AWS::Partition}:cloudfront::${AWS::AccountId}:distribution/${Distribution}'
+
+  SyncFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: murphduel-sheet-sync
+      Description: Pulls MurphDuel season data from Google Sheets into the private site bucket.
+      Runtime: nodejs22.x
+      Handler: index.handler
+      Role: !GetAtt SyncFunctionRole.Arn
+      Timeout: 30
+      MemorySize: 256
+      ReservedConcurrentExecutions: 1
+      Code:
+        S3Bucket: !Ref LambdaCodeBucket
+        S3Key: !Ref LambdaCodeKey
+      Environment:
+        Variables:
+          SITE_BUCKET: !Ref SiteBucket
+          DISTRIBUTION_ID: !Ref Distribution
+          SHEETS_SECRET_ARN: !Ref SheetsApiKeySecretArn
+          SPREADSHEET_ID: !Ref SpreadsheetId
+          ALLOWED_ORIGINS: !Sub 'https://www.${DomainName},https://${DomainName}'
+
+  SyncFunctionLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub '/aws/lambda/${SyncFunction}'
+      RetentionInDays: 14
+
+  SyncFunctionUrl:
+    Type: AWS::Lambda::Url
+    Properties:
+      AuthType: NONE
+      InvokeMode: BUFFERED
+      TargetFunctionArn: !GetAtt SyncFunction.Arn
+      Cors:
+        AllowHeaders:
+          - content-type
+        AllowMethods:
+          - POST
+        AllowOrigins:
+          - !Sub 'https://www.${DomainName}'
+          - !Sub 'https://${DomainName}'
+        MaxAge: 600
+
+  SyncFunctionUrlPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunctionUrl
+      FunctionName: !Ref SyncFunction
+      FunctionUrlAuthType: NONE
+      Principal: '*'
+
+  SyncFunctionInvokePermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName: !Ref SyncFunction
+      InvokedViaFunctionUrl: true
+      Principal: '*'
+
+  SyncScheduleRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: scheduler.amazonaws.com
+            Action: sts:AssumeRole
+      Policies:
+        - PolicyName: InvokeMurphDuelSync
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action: lambda:InvokeFunction
+                Resource: !GetAtt SyncFunction.Arn
+
+  SyncSchedule:
+    Type: AWS::Scheduler::Schedule
+    Properties:
+      Description: Refreshes MurphDuel every Monday and Tuesday at 6 PM Mountain Time.
+      FlexibleTimeWindow:
+        Mode: 'OFF'
+      ScheduleExpression: 'cron(0 18 ? * MON,TUE *)'
+      ScheduleExpressionTimezone: America/Denver
+      State: ENABLED
+      Target:
+        Arn: !GetAtt SyncFunction.Arn
+        Input: '{"source":"aws.scheduler"}'
+        RoleArn: !GetAtt SyncScheduleRole.Arn
+
   ApexAliasRecord:
     Type: AWS::Route53::RecordSet
     Properties:
@@ -324,6 +464,15 @@ Outputs:
     Value: !Ref Distribution
   SiteBucketName:
     Value: !Ref SiteBucket
+  ArtifactBucketName:
+    Value: !Ref ArtifactBucket
+  SyncEndpoint:
+    Description: Public trigger used by the site sync button. The Sheets key remains in Secrets Manager.
+    Value: !GetAtt SyncFunctionUrl.FunctionUrl
+  SyncFunctionName:
+    Value: !Ref SyncFunction
+  SyncScheduleDescription:
+    Value: Monday and Tuesday at 6:00 PM America/Denver
   PipelineName:
     Value: !Ref Pipeline
   GitHubConnectionArn:
