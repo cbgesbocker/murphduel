@@ -130,8 +130,10 @@ assert.match(flakesHtml, /<h1 id="flakesTitle">Fallen<br><span>Soldiers\.<\/span
 assert.match(flakesHtml, /src="images\/operative-kenneth\.png"/);
 assert.match(flakesHtml, /<p class="flake-rank" lang="ko">요원<\/p>/);
 assert.match(flakesHtml, /<h2 lang="ko">케니 조<\/h2>/);
+assert.match(flakesHtml, /<p class="flake-years">2018–2024<\/p>/);
 assert.match(flakesHtml, /src="images\/sargeant-chirico\.png"/);
 assert.match(flakesHtml, /<h2>Father Chirico<\/h2>/);
+assert.match(flakesHtml, /<p class="flake-years">2019–2025<\/p>/);
 assert.match(flakesHtml, /src="images\/bloodhawk\.png"/);
 assert.match(flakesHtml, /<h2>Bloodhawk<\/h2>/);
 assert.match(flakesHtml, /<p class="flake-years">2022–2025<\/p>/);
