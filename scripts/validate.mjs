@@ -24,6 +24,8 @@ const requiredFiles = [
   "site/images/commissioner.jpeg",
   "site/images/operative-kenneth.png",
   "site/images/sargeant-chirico.png",
+  "site/images/bloodhawk.png",
+  "site/images/airforce-artega.png",
   "site/og.png",
   "infrastructure/buildspec.yml",
   "infrastructure/template.yml"
@@ -124,12 +126,18 @@ assert.match(rulesHtml, /href="rules\.html" aria-current="page"/);
 assert.match(rulesHtml, /href="flakes\.html"/);
 
 const flakesHtml = await readFile("site/flakes.html", "utf8");
-assert.match(flakesHtml, /<h1 id="flakesTitle">League<br><span>Flakes\.<\/span><\/h1>/);
+assert.match(flakesHtml, /<h1 id="flakesTitle">Fallen<br><span>Soldiers\.<\/span><\/h1>/);
 assert.match(flakesHtml, /src="images\/operative-kenneth\.png"/);
 assert.match(flakesHtml, /<p class="flake-rank" lang="ko">요원<\/p>/);
 assert.match(flakesHtml, /<h2 lang="ko">케니 조<\/h2>/);
 assert.match(flakesHtml, /src="images\/sargeant-chirico\.png"/);
 assert.match(flakesHtml, /<h2>Father Chirico<\/h2>/);
+assert.match(flakesHtml, /src="images\/bloodhawk\.png"/);
+assert.match(flakesHtml, /<h2>Bloodhawk<\/h2>/);
+assert.match(flakesHtml, /<p class="flake-years">2022–2025<\/p>/);
+assert.match(flakesHtml, /src="images\/airforce-artega\.png"/);
+assert.match(flakesHtml, /<h2>Airforce Artega<\/h2>/);
+assert.match(flakesHtml, /<p class="flake-years">2020–2025<\/p>/);
 assert.match(flakesHtml, /href="flakes\.html" aria-current="page"/);
 
 const normalized = normalizeData(data);
